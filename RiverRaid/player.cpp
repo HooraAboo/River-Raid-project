@@ -10,8 +10,9 @@ Player::Player(string playerName, QGraphicsView* view)
     score = 0;
     health = 3;
     fuel = 10;
-    //setPos(view->width()/2,view->height() - this->pixmap().height());
+
     setPos(350 , 500);
+    //rotate player
     setTransformOriginPoint(50,50);
     setRotation(-90);
 }
@@ -19,19 +20,22 @@ Player::Player(string playerName, QGraphicsView* view)
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Right){
-        if(pos().x() > 0){
+        if(pos().x() < view->rect().width()- this->pixmap().width()){
             setPos(x()+10 , y());
         }
 
     }
     else if (event->key() == Qt::Key_Left){
-        if(pos().x() < view->rect().width() - this->pixmap().width() ){
+        if(pos().x() > 0
+                //view->rect().width()
+             //   - this->pixmap().width()
+                ){
             setPos(x()-10 , y());
         }
     }
     else if (event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet();
-        bullet->setPos(this->x()+50, this->y()-100);
+        bullet->setPos(this->x()+40, this->y()-100);
         scene()->addItem(bullet);
    }
 //    else if (event->key() == Qt::Key_Alt){
