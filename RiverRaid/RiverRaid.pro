@@ -14,11 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     player.cpp \
-    gameengine.cpp
+    gameengine.cpp \
+    enemy.cpp
 
 HEADERS  += \
     player.h \
-    gameengine.h
+    gameengine.h \
+    enemy.h
 
 FORMS    +=
 

@@ -3,5 +3,4 @@
         <file>../Player.png</file>
         <file>../BackGround.png</file>
     </qresource>
-    <qresource prefix="/"/>
 </RCC>
