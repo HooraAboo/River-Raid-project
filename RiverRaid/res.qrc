@@ -2,5 +2,6 @@
     <qresource prefix="/images">
         <file>../Player.png</file>
         <file>../BackGround.png</file>
+        <file>../Bullet.png</file>
     </qresource>
 </RCC>

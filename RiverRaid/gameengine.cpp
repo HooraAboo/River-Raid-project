@@ -10,12 +10,15 @@ GameEngine::GameEngine()
     this->setScene(scene);
     this->setHorizontalScrollBarPolicy(ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(ScrollBarAlwaysOff);
-    this->setFixedSize(800,800);
+    this->setFixedSize(800,600);
 
 
 
     // set the player
     Player * player = new Player("mamad" , this) ;
+    player->setFlag(QGraphicsItem::ItemIsFocusable);
+    player->setFocus();
+    scene->addItem(player);
 
 
 
