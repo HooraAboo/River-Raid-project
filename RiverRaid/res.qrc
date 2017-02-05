@@ -3,5 +3,7 @@
         <file>../Player.png</file>
         <file>../BackGround.png</file>
         <file>../Bullet.png</file>
+        <file>../Explosion.png</file>
+        <file>../Ship.png</file>
     </qresource>
 </RCC>

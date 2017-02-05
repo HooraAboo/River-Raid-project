@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     enemy.cpp \
     bullet.cpp \
     score.cpp \
-    health.cpp
+    health.cpp \
+    ship.cpp
 
 HEADERS  += \
     player.h \
@@ -26,7 +27,8 @@ HEADERS  += \
     enemy.h \
     bullet.h \
     score.h \
-    health.h
+    health.h \
+    ship.h
 FORMS    +=
 
 RESOURCES += \
