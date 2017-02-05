@@ -7,8 +7,8 @@
 class Health: public QGraphicsTextItem{
 public:
     Health();
-    //void increase;
-    //void decrease;
+    void increase();
+    void decrease();
 private:
     int health;
 };

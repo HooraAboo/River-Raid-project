@@ -26,6 +26,12 @@ GameEngine::GameEngine()
     // set the score
     Score * score = new Score();
     scene->addItem(score);
+    score->setPos(x(), y()+5);
+
+    // set the health
+    Health * health = new Health();
+    scene->addItem(health);
+    health->setPos(x(), y()+35);
 
 
 
