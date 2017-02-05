@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QTimer>
+#include <QList>
 
 class Bullet: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT

@@ -16,13 +16,17 @@ SOURCES += main.cpp \
     player.cpp \
     gameengine.cpp \
     enemy.cpp \
-    bullet.cpp
+    bullet.cpp \
+    score.cpp \
+    health.cpp
 
 HEADERS  += \
     player.h \
     gameengine.h \
     enemy.h \
-    bullet.h
+    bullet.h \
+    score.h \
+    health.h
 FORMS    +=
 
 RESOURCES += \

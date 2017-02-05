@@ -5,6 +5,8 @@
 #include <QGraphicsView>
 #include <QBrush>
 #include <QImage>
+#include "player.h"
+#include "score.h"
 
 using namespace Qt;
 
