@@ -15,13 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp \
     player.cpp \
     gameengine.cpp \
-    enemy.cpp
+    enemy.cpp \
     bullet.cpp
 
 HEADERS  += \
     player.h \
     gameengine.h \
-    enemy.h
+    enemy.h \
     bullet.h
 FORMS    +=
 
