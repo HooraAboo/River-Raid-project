@@ -3,14 +3,18 @@
 
 #include <QGraphicsTextItem>
 #include <QFont>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
+#include <QImage>
 
-class Health: public QGraphicsTextItem{
+class Health: public QGraphicsTextItem {
 public:
     Health();
-    //void increase;
-    //void decrease;
+    void increase();
+    void decrease();
 private:
     int health;
+    QGraphicsPixmapItem* heart[3] ;
 };
 
 #endif // HEALTH_H

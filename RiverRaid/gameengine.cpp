@@ -24,9 +24,12 @@ GameEngine::GameEngine()
     scene->addItem(player);
 
     // set the score
-    Score * score = new Score();
-    scene->addItem(score);
+//    Score * score = new Score();
+//    scene->addItem(score);
+//    score->setPos(x(), y()+5);
 
-
-
+    // set the health
+    Health * health = new Health();
+    scene->addItem((QGraphicsPixmapItem*) health);
+//    health->setPos(x(), y()+35);
 }

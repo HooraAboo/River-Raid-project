@@ -5,8 +5,10 @@
 #include <QGraphicsView>
 #include <QBrush>
 #include <QImage>
+
 #include "player.h"
 #include "score.h"
+#include "health.h"
 
 using namespace Qt;
 
