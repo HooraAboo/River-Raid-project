@@ -11,10 +11,10 @@ Player::Player(string playerName, QGraphicsView* view)
     health = 3;
     fuel = 10;
 
-    setPos(350 , 500);
+    this->setPos(350 , 500);
     //rotate player
-    setTransformOriginPoint(50,50);
-    setRotation(-90);
+    this->setTransformOriginPoint(50,50);
+    this->setRotation(-90);
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
