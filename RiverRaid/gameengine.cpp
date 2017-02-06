@@ -4,7 +4,7 @@ GameEngine::GameEngine()
 {
     // set the scene
     QGraphicsScene * scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,800,600);
+    scene->setSceneRect(0,0,900,613);
 
 
     // set the background pic
@@ -13,7 +13,7 @@ GameEngine::GameEngine()
     // set scroll off
     this->setHorizontalScrollBarPolicy(ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(ScrollBarAlwaysOff);
-    this->setFixedSize(800,600);
+    this->setFixedSize(900,613);
 
 
     // set the player

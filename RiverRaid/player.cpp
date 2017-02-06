@@ -5,13 +5,13 @@
 Player::Player(string playerName, QGraphicsView* view)
 {
     this->view = view ;
-    setPixmap(QPixmap(":/images/Player.png").scaled(100 , 100));
+    setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
     name = playerName;
     score = 0;
     health = new Health(scene(), 3);
     fuel = 10;
 
-    this->setPos(350 , 500);
+    this->setPos(420 , 500);
     //rotate player
     this->setTransformOriginPoint(50,50);
     this->setRotation(-90);
@@ -36,22 +36,20 @@ void Player::explodePlayerAndExit()
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Right){
-        if(pos().x() < view->rect().width()- this->pixmap().width()){
+        if(pos().x() < view->rect().width()- /*this->pixmap().width()*/310){
             setPos(x()+10 , y());
-        }
+        } else explodePlayerAndExit();
 
     }
     else if (event->key() == Qt::Key_Left){
-        if(pos().x() > 0
-                //view->rect().width()
-             //   - this->pixmap().width()
-                ){
+        if(pos().x() > 240){
             setPos(x()-10 , y());
-        }
+        } else explodePlayerAndExit();
+
     }
     else if (event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet();
-        bullet->setPos(this->x()+40, this->y()-100);
+        bullet->setPos(this->x()+19, this->y()-40);
         scene()->addItem(bullet);
    }
 //    else if (event->key() == Qt::Key_Alt){
