@@ -12,8 +12,8 @@
 class Enemy: public QObject,public QGraphicsPixmapItem{
     Q_OBJECT
 protected:
-    int sceneSpeed = 5 ;
-    int normalHorizontalSpeed = 5 ;
+    int sceneSpeed = 2.5 ;
+    int normalHorizontalSpeed = 1;
     int speed ;
     int health ;
     char direction ;

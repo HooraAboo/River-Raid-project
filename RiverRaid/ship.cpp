@@ -5,10 +5,10 @@
 Ship::Ship(QGraphicsView *view)
 {
     this->view = view ;
-    this->health = 2 ;
-    this->speed = 0 ;
-    int sceneWidth = 800; //this must be fixed!
-    int randomX = (rand()% sceneWidth) ;
+    this->health = 5 ;
+    this->speed = 1 ;
+    int sceneWidth = 350; //this must be fixed!
+    int randomX = (rand()% sceneWidth + 240) ;
 //    if(rand()%2){
 //    cout << randomX ;
 //    QPixmap pic(":/image/Player.png") ;

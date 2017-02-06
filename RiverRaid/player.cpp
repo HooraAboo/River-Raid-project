@@ -24,7 +24,8 @@ void Player::damage()
 
 void Player::explodePlayerAndExit()
 {
-    this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width() , this->pixmap().height()));
+    this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width()
+                                                             , this->pixmap().height()));
     scene()->removeItem(this);
     delete this;
     showLoseDialog();

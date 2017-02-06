@@ -34,10 +34,10 @@ GameEngine::GameEngine()
 
 
     // spawn enemies
-//    EnemySpawner * spawner =  new EnemySpawner(this) ;
-//    QTimer * timer = new QTimer() ;
-//    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
+    EnemySpawner * spawner =  new EnemySpawner(this) ;
+    QTimer * timer = new QTimer() ;
+    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
 
-//    timer->start(2000);
+    timer->start(2000);
 
 }

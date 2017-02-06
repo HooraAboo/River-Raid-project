@@ -1,5 +1,5 @@
 #include "bullet.h"
-
+#include "ship.h"
 Bullet::Bullet(){
     this->setPixmap(QPixmap(":/images/Bullet.png").scaled(12 , 12));
     setTransformOriginPoint(50,50);
@@ -13,10 +13,11 @@ Bullet::Bullet(){
 void Bullet::move(){
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (int i = 0; i < colliding_items.size(); ++i){
-        if (typeid(*(colliding_items[i])) == typeid(Enemy)){
-            scene()->removeItem(colliding_items[i]);
+        if (typeid(*(colliding_items[i])) == typeid(Ship)){
+            cout << "Bullet collided with enemy!" << endl ;
+            Enemy* enemy = (Enemy*) colliding_items[i] ;
+            enemy->damage();
             scene()->removeItem(this);
-            delete colliding_items[i];
             delete this;
             return;
         }
