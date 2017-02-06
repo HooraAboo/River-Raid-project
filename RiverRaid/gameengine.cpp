@@ -4,7 +4,8 @@ GameEngine::GameEngine()
 {
     // set the scene
     QGraphicsScene * scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,800,600);
+    scene->setSceneRect(0,0,900,613);
+
 
     // set the background pic
     this->setBackgroundBrush(QBrush(QImage(":/images/BackGround.png")));
@@ -12,8 +13,7 @@ GameEngine::GameEngine()
     // set scroll off
     this->setHorizontalScrollBarPolicy(ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(ScrollBarAlwaysOff);
-    this->setFixedSize(800,600);
-
+    this->setFixedSize(900,613);
 
 
     // set the player
@@ -23,21 +23,21 @@ GameEngine::GameEngine()
     player->setFocus();
     scene->addItem(player);
 
+
     // set the score
-//    Score * score = new Score();
-//    scene->addItem(score);
-//    score->setPos(x(), y()+5);
+    Score * score = new Score();
+    scene->addItem(score);
 
     // set the health
-//    Health * health = new Health();
-//    scene->addItem((QGraphicsPixmapItem*) health);
-//    health->setPos(x(), y()+35);
+    Health * health = new Health(scene , 5);
+    scene->addItem(health);
+
 
     // spawn enemies
-    EnemySpawner * spawner =  new EnemySpawner(this) ;
-    QTimer * timer = new QTimer() ;
-    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
+//    EnemySpawner * spawner =  new EnemySpawner(this) ;
+//    QTimer * timer = new QTimer() ;
+//    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
 
-    timer->start(2000);
+//    timer->start(2000);
 
 }
