@@ -11,9 +11,21 @@ Bullet::Bullet(){
 }
 
 void Bullet::move(){
-   this->setPos(x(), y()-10);
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+    for (int i = 0; i < colliding_items.size(); ++i){
+        if (typeid(*(colliding_items[i])) == typeid(Enemy)){
+            // remove them both
+            scene()->removeItem(colliding_items[i]);
+            scene()->removeItem(this);
+            // delete them both
+            delete colliding_items[i];
+            delete this;
+            return;
+        }
+    }
+    this->setPos(x(), y()-10);
    if(this->pos().y() < 0){
-       scene()->removeItem(this);
-       delete this;
+        scene()->removeItem(this);
+        delete this;
    }
 }

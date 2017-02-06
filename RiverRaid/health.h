@@ -11,6 +11,7 @@ class Health: public QGraphicsTextItem {
 public:
     Health(QGraphicsScene* scene , int h);
     int getHealthNum();
+    void removeHeart();
 private:
     int health;
     QGraphicsPixmapItem* heart[10] ; // hahaha! :)))

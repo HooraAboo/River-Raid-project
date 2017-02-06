@@ -19,10 +19,7 @@ Player::Player(string playerName, QGraphicsView* view)
 
 void Player::damage()
 {
-    health-- ;
-    if(health <= 0){
-        explodePlayerAndExit();
-    }
+    decreaseHealth();
 }
 
 void Player::explodePlayerAndExit()
@@ -72,10 +69,17 @@ void Player::showLoseDialog()
 
 void Player::increaseHealth(){
     int h = health->getHealthNum();
+    health->removeHeart();
+    delete health ;
     health = new Health(scene(), ++h);
 }
 
 void Player::decreaseHealth(){
     int h = health->getHealthNum();
-    health = new Health(scene(), --h);
+    delete health ;
+    if(h > 0){
+        health = new Health(scene(), --h);
+    }
+    else
+        explodePlayerAndExit();
 }
