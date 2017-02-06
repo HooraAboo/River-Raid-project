@@ -12,17 +12,24 @@
 class Enemy: public QObject,public QGraphicsPixmapItem{
     Q_OBJECT
 protected:
-    int sceneSpeed = 20 ;
-    int normalHorizontalSpeed = 20 ;
+    int sceneSpeed = 5 ;
+    int normalHorizontalSpeed = 5 ;
     int speed ;
     int health ;
     char direction ;
     QGraphicsView* view ;
 public:
+
+    static QPixmap* shipImage;
+    static QPixmap chopperImage ;
+    static QPixmap jetImage ;
+
     void damage() ;
     void explode();
+
 public slots:
     void move() ;
 };
+
 
 #endif // ENEMY_H

@@ -10,10 +10,12 @@ Ship::Ship(QGraphicsView *view)
     int sceneWidth = 800; //this must be fixed!
     int randomX = (rand()% sceneWidth) ;
 //    if(rand()%2){
-    cout << randomX ;
-    QPixmap pic(":/image/Player.png") ;
-    pic.scaled(40 , 40) ;
-        setPixmap(pic);
+//    cout << randomX ;
+//    QPixmap pic(":/image/Player.png") ;
+//    pic.scaled(40 , 40) ;
+    setPixmap(shipImage->scaled(30 , 30));
+//    cout << pic.colorCount() ;
+//        setPixmap(pic);
         setPos(randomX , 0) ;
 //    }
 
@@ -22,6 +24,6 @@ Ship::Ship(QGraphicsView *view)
 
     connect(timer ,SIGNAL(timeout()) , this , SLOT(move()) ) ;
 
-    timer->start(50);
+    timer->start(25);
 
 }

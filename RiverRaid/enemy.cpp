@@ -1,5 +1,8 @@
 #include "enemy.h"
 
+
+QPixmap* Enemy::shipImage = NULL;
+
 void Enemy::damage()
 {
     health-- ;

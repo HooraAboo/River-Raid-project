@@ -8,7 +8,7 @@ EnemySpawner::EnemySpawner(GameEngine* engine)
 
 void EnemySpawner::spawnRandomEnemy()
 {
-    cout << "enemy spawn called! " << endl ;
+//    cout << "enemy spawn called! " << endl ;
     int random = rand() ;
 //    if(random % 3 == 0){ // Ship
         Enemy* ship = new Ship(gameEngine) ;
