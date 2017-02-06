@@ -9,12 +9,11 @@
 
 class Health: public QGraphicsTextItem {
 public:
-    Health();
-    void increase();
-    void decrease();
+    Health(QGraphicsScene* scene , int h);
+    int getHealthNum();
 private:
     int health;
-    QGraphicsPixmapItem* heart[3] ;
+    QGraphicsPixmapItem* heart[10] ; // hahaha! :)))
 };
 
 #endif // HEALTH_H

@@ -8,7 +8,7 @@ Player::Player(string playerName, QGraphicsView* view)
     setPixmap(QPixmap(":/images/Player.png").scaled(100 , 100));
     name = playerName;
     score = 0;
-    health = 3;
+    health = new Health(scene(), 3);
     fuel = 10;
 
     this->setPos(350 , 500);
@@ -68,4 +68,14 @@ void Player::showLoseDialog()
 {
     cout << "You Lost!!!" << endl ; // TODO : this must be replaced with a proper message !
     QApplication::quit() ;
+}
+
+void Player::increaseHealth(){
+    int h = health->getHealthNum();
+    health = new Health(scene(), ++h);
+}
+
+void Player::decreaseHealth(){
+    int h = health->getHealthNum();
+    health = new Health(scene(), --h);
 }

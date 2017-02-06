@@ -1,22 +1,19 @@
 #include "health.h"
 
-Health::Health()
+Health::Health(QGraphicsScene * scene , int h)
 {
-//    health = 3;
-//    setPlainText(QString("Health: "));
-//    for (int i = 0; i < health; ++i) {
-//        heart[i] = new QGraphicsPixmapItem(QPixmap::fromImage(QImage(":/images/Heart.png").scaled(20 , 20))) ;
-//        heart[i]->setPos(this->x()+ 10 + 20*i , this->y());
-//        scene()->addItem(heart[i]);
-//    }
 
+   this->health = h;
+   this->setPos(x(), y()+35);
 
+   setPlainText(QString("Health: "));
+   for(int i = 0; i < h; ++i){
+       heart[i] = new QGraphicsPixmapItem(QPixmap(":/images/Heart.png").scaled(20,20));
+       heart[i]->setPos(x()+80+i*20, y()+8);
+       scene->addItem(heart[i]);
+   }
 }
 
-void Health::increase(){
-    health++;
-}
-
-void Health::decrease(){
-    health--;
+int Health::getHealthNum(){
+    return health;
 }

@@ -14,8 +14,6 @@ GameEngine::GameEngine()
     this->setVerticalScrollBarPolicy(ScrollBarAlwaysOff);
     this->setFixedSize(800,600);
 
-
-
     // set the player
     Player * player = new Player("mamad" , this) ;
     // set focus on player
@@ -24,20 +22,25 @@ GameEngine::GameEngine()
     scene->addItem(player);
 
     // set the score
-//    Score * score = new Score();
-//    scene->addItem(score);
-//    score->setPos(x(), y()+5);
+    Score * score = new Score();
+    scene->addItem(score);
 
     // set the health
-//    Health * health = new Health();
-//    scene->addItem((QGraphicsPixmapItem*) health);
-//    health->setPos(x(), y()+35);
+//    Health * health = new Health(scene , 5);
+//    scene->addItem(health);
+    //health->setPos(x(), y()+35);
+
+
+    //set the picture
+//    QGraphicsPixmapItem* pic = new QGraphicsPixmapItem(QPixmap(":/images/Heart.png").scaled(20,20));
+//    pic->setPos(50,50);
+//    scene->addItem(pic);
 
     // spawn enemies
-    EnemySpawner * spawner =  new EnemySpawner(this) ;
-    QTimer * timer = new QTimer() ;
-    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
+//    EnemySpawner * spawner =  new EnemySpawner(this) ;
+//    QTimer * timer = new QTimer() ;
+//    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
 
-    timer->start(2000);
+//    timer->start(2000);
 
 }
