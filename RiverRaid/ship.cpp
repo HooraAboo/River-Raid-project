@@ -5,15 +5,15 @@
 Ship::Ship(QGraphicsView *view)
 {
     this->view = view ;
-    this->health = 5 ;
-    this->speed = 1 ;
+    this->health = 2 ;
+    this->speed = 0 ;
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;
 //    if(rand()%2){
 //    cout << randomX ;
 //    QPixmap pic(":/image/Player.png") ;
 //    pic.scaled(40 , 40) ;
-    setPixmap(shipImage->scaled(30 , 30));
+    setPixmap(shipImage->scaled(40 , 40));
 //    cout << pic.colorCount() ;
 //        setPixmap(pic);
         setPos(randomX , 0) ;

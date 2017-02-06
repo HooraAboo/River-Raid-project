@@ -14,8 +14,9 @@ void Enemy::damage()
 void Enemy::explode()
 {
     this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width() , this->pixmap().height()));
-    scene()->removeItem(this);
-    delete this;
+
+//    scene()->removeItem(this);
+//    delete this;
     return ;
 
 }

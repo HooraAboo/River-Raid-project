@@ -7,7 +7,7 @@ Bullet::Bullet(){
 
     QTimer * timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
-    timer->start(50);
+    timer->start(20);
 }
 
 void Bullet::move(){
@@ -23,7 +23,7 @@ void Bullet::move(){
         }
     }
 
-    this->setPos(x(), y()-10);
+    this->setPos(x(), y()-15);
     if(this->pos().y() < 0){
          scene()->removeItem(this);
          delete this;
