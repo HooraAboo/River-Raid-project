@@ -17,6 +17,25 @@ Player::Player(string playerName, QGraphicsView* view)
     this->setRotation(-90);
 }
 
+void Player::damage()
+{
+    health-- ;
+    if(health <= 0){
+        explodePlayerAndExit();
+    }
+}
+
+void Player::explodePlayerAndExit()
+{
+    this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width() , this->pixmap().height()));
+    scene()->removeItem(this);
+    delete this;
+    showLoseDialog();
+    return ;
+
+}
+
+
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Right){
@@ -43,4 +62,10 @@ void Player::keyPressEvent(QKeyEvent *event)
 //    }
 
 
+}
+
+void Player::showLoseDialog()
+{
+    cout << "You Lost!!!" << endl ; // TODO : this must be replaced with a proper message !
+    QApplication::quit() ;
 }

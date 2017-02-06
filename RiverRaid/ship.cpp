@@ -4,9 +4,11 @@
 
 Ship::Ship(QGraphicsView *view)
 {
+    this->view = view ;
     this->health = 2 ;
     this->speed = 0 ;
-    int randomX = (rand()% (int) scene()->width()) ;
+    int sceneWidth = 800; //this must be fixed!
+    int randomX = (rand()% sceneWidth) ;
 //    if(rand()%2){
         setPixmap(QPixmap(":/image/Ship.png"));
 //    }

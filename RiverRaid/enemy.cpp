@@ -19,6 +19,25 @@ void Enemy::explode()
 
 void Enemy::move()
 {
+    QList<QGraphicsItem*> colliding_Items = collidingItems() ;
+    for (int i = 0; i < colliding_Items.size(); ++i) {
+        if( typeid(*(colliding_Items[i])) == typeid(Player)){
+            this->explode();
+            Player* player = (Player*) colliding_Items[i] ;
+            player->damage();
+        }
+    }
 
+    setPos(x() + normalHorizontalSpeed * speed , y() + sceneSpeed ) ;
+    if(x() < 0 || x() > scene()->width()){
+        scene()->removeItem(this);
+        delete this ;
+        return ;
+    }
+    if(y() > scene()->height()){
+        scene()->removeItem(this);
+        delete this ;
+        return ;
+    }
 }
 

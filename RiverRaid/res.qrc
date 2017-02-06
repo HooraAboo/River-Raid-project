@@ -3,11 +3,8 @@
         <file>../Player.png</file>
         <file>../BackGround.png</file>
         <file>../Bullet.png</file>
-<<<<<<< HEAD
         <file>../Explosion.png</file>
         <file>../Ship.png</file>
-=======
         <file>../Heart.png</file>
->>>>>>> 5fc96a6a1d721bf2d1e3b856ea53bd510a50dbd4
     </qresource>
 </RCC>

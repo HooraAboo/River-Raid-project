@@ -29,7 +29,15 @@ GameEngine::GameEngine()
 //    score->setPos(x(), y()+5);
 
     // set the health
-    Health * health = new Health();
-    scene->addItem((QGraphicsPixmapItem*) health);
+//    Health * health = new Health();
+//    scene->addItem((QGraphicsPixmapItem*) health);
 //    health->setPos(x(), y()+35);
+
+    // spawn enemies
+    EnemySpawner * spawner =  new EnemySpawner(this) ;
+    QTimer * timer = new QTimer() ;
+    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
+
+    timer->start(2000);
+
 }

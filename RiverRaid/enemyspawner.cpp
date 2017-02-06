@@ -1,0 +1,23 @@
+#include "enemyspawner.h"
+
+EnemySpawner::EnemySpawner(GameEngine* engine)
+{
+    this->gameEngine = engine ;
+}
+
+
+void EnemySpawner::spawnRandomEnemy()
+{
+    int random = rand() ;
+//    if(random % 3 == 0){ // Ship
+        Enemy* ship = new Ship(gameEngine) ;
+        gameEngine->scene()->addItem(ship);
+
+//    }
+//    else if(random == 1){ // Chopper
+
+//    }
+//    else if(random == 2){ // Jet
+
+//    }
+}
