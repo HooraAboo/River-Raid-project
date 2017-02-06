@@ -10,10 +10,15 @@ Ship::Ship(QGraphicsView *view)
     int sceneWidth = 800; //this must be fixed!
     int randomX = (rand()% sceneWidth) ;
 //    if(rand()%2){
-        setPixmap(QPixmap(":/image/Ship.png"));
+    cout << randomX ;
+    QPixmap pic(":/image/Player.png") ;
+    pic.scaled(40 , 40) ;
+        setPixmap(pic);
+        setPos(randomX , 0) ;
 //    }
 
-    QTimer *timer = new QTimer(this) ;
+
+    QTimer *timer = new QTimer() ;
 
     connect(timer ,SIGNAL(timeout()) , this , SLOT(move()) ) ;
 

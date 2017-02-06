@@ -5,7 +5,8 @@
 #include <cstdlib>
 #include <QTimer>
 #include <QObject>
-
+#include <QPixmap>
+#include <QGraphicsPixmapItem>
 class Ship : public Enemy
 {
 public:
