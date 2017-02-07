@@ -6,6 +6,7 @@ Ship::Ship(QGraphicsView *view)
 {
     this->view = view ;
     this->health = 2 ;
+    this->score = 2 ;
     this->speed = 0 ;
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;

@@ -24,9 +24,9 @@ GameEngine::GameEngine()
     scene->addItem(player);
 
 
-    // set the score
-    Score * score = new Score();
-    scene->addItem(score);
+//    // set the score
+    Score * score = new Score(0 , scene);
+//    scene->addItem(score);
 
     // set the health
     Health * health = new Health(scene , 5);

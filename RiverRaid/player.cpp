@@ -7,7 +7,8 @@ Player::Player(string playerName, QGraphicsView* view)
     this->view = view ;
     setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
     name = playerName;
-    score = 0;
+//    score = new Score(0 , scene());
+//    scene()->addItem(score);
     health = new Health(scene(), 3);
     fuel = 10;
 
@@ -81,4 +82,29 @@ void Player::decreaseHealth(){
     }
     else
         explodePlayerAndExit();
+}
+
+void Player::increaseScore(int incScore)
+{/*
+    cout << "increase score called!" << endl ;
+    scene()->removeItem(score);
+    cout << "score removed!" << endl ;
+    int s = this->score->getScore() ;
+
+    delete score ;
+
+    score = new Score(s+incScore , scene()) ;
+//    scene()->addItem(score);*/
+
+}
+
+
+Score *Player::getScore()
+{
+    return score ;
+}
+
+Health *Player::getHealth()
+{
+    return health ;
 }

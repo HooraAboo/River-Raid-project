@@ -14,9 +14,9 @@ void Enemy::damage()
 void Enemy::explode()
 {
     this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width() , this->pixmap().height()));
-
-//    scene()->removeItem(this);
-//    delete this;
+    Player* player = (Player*) scene()->focusItem() ;
+    player->increaseScore(score);
+    QTimer::singleShot(500 , this , SLOT(remove())) ;
     return ;
 
 }
@@ -44,5 +44,12 @@ void Enemy::move()
         delete this ;
         return ;
     }
+}
+
+void Enemy::remove()
+{
+    scene()->removeItem(this);
+    delete this;
+    return ;
 }
 

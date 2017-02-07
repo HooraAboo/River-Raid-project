@@ -20,8 +20,7 @@ SOURCES += main.cpp \
     score.cpp \
     health.cpp \
     ship.cpp \
-    enemyspawner.cpp \
-    explosionhandler.cpp
+    enemyspawner.cpp
 
 HEADERS  += \
     player.h \
@@ -31,8 +30,7 @@ HEADERS  += \
     score.h \
     health.h \
     ship.h \
-    enemyspawner.h \
-    explosionhandler.h
+    enemyspawner.h
 FORMS    +=
 
 RESOURCES += \

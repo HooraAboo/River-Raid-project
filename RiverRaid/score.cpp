@@ -1,13 +1,31 @@
 #include "score.h"
 
-Score::Score()
+Score::Score(int score , QGraphicsScene* scene)
 {
-    score = 0;
+    this->score = score;
     setPlainText(QString("Score: ") + QString::number(score));
-    this->setPos(x(), y()+5);
+    this->setPos(this->x(), this->y()+5);
+    cout << "score created!" << endl ;
+    scene->addItem(this);
+//    cout << "something wrong!" << endl ;
 }
 
 void Score::increase(int incScore){
     score += incScore*10;
     setPlainText(QString("Score: ") + QString::number(score));
+    cout << "score increased!" << endl ;
+}
+
+int Score::getScore()
+{
+    return score ;
+}
+
+
+void Score::remove()
+{
+    scene()->removeItem(this);
+    delete this ;
+    return ;
+
 }

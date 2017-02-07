@@ -10,8 +10,9 @@
 #include <QPixmap>
 #include <QKeyEvent>
 #include <iostream>
-#include "health.h"
 
+#include "health.h"
+#include "score.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ class Player : public QObject, public QGraphicsPixmapItem
 private:
     string name;
     Health* health;
-    int score;
+    Score* score;
     int fuel;
     QGraphicsView* view ;
 
@@ -33,6 +34,10 @@ public:
     void showLoseDialog();
     void increaseHealth();
     void decreaseHealth();
+    void increaseScore(int incScore) ;
+//    void decreaseScore();
+    Score* getScore();
+    Health* getHealth();
 };
 
 #endif // PLAYER_H
