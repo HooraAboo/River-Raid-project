@@ -17,6 +17,7 @@ class Fuel: public QObject, public QGraphicsPixmapItem{
 public:
     Fuel(QGraphicsView*);
     void explode();
+
 public slots:
     void move();
 private:

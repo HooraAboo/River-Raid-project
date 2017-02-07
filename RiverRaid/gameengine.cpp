@@ -51,4 +51,6 @@ GameEngine::GameEngine()
     Fuel* fuel = new Fuel(this);
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), fuel, SLOT(move()));
+
+    timer->start(6000);
 }
