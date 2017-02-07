@@ -7,4 +7,5 @@
         <file>../Ship.png</file>
         <file>../Heart.png</file>
     </qresource>
+    <qresource prefix="/sound"/>
 </RCC>
