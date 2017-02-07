@@ -10,5 +10,7 @@ int main(int argc, char *argv[]){
     GameEngine * game = new GameEngine() ;
     game->show();
 
+    cout << "hello!" << endl ;
+
     return a.exec();
 }
