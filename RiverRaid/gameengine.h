@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QTimer>
 #include <cstdlib>
+#include <QMediaPlayer>
 
 
 #include "player.h"

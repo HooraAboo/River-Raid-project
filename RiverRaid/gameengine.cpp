@@ -40,4 +40,9 @@ GameEngine::GameEngine()
 
     timer->start(2000);
 
+
+    //play BG music
+    QMediaPlayer * music = new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/soundtrack/BG sound.mp3"));
+    music->play();
 }

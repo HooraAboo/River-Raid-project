@@ -10,7 +10,10 @@
 #include <QPixmap>
 #include <QKeyEvent>
 #include <iostream>
+#include <QMediaPlayer>
+
 #include "health.h"
+#include "bullet.h"
 
 
 using namespace std;
@@ -33,6 +36,8 @@ public:
     void showLoseDialog();
     void increaseHealth();
     void decreaseHealth();
+private:
+    QMediaPlayer* bulletsound;
 };
 
 #endif // PLAYER_H
