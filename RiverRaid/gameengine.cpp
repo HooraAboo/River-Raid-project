@@ -41,8 +41,14 @@ GameEngine::GameEngine()
     timer->start(2000);
 
 
-    //play BG music
+    // play BG music
     QMediaPlayer * music = new QMediaPlayer();
     music->setMedia(QUrl("qrc:/soundtrack/BG sound.mp3"));
     music->play();
+
+
+    // spawn fuel tank
+    Fuel* fuel = new Fuel(this);
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), fuel, SLOT(move()));
 }

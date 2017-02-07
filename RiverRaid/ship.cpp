@@ -16,7 +16,7 @@ Ship::Ship(QGraphicsView *view)
     setPixmap(shipImage->scaled(40 , 40));
 //    cout << pic.colorCount() ;
 //        setPixmap(pic);
-        setPos(randomX , 0) ;
+    setPos(randomX , 0) ;
 //    }
 
 
