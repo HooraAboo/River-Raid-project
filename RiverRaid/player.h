@@ -13,8 +13,8 @@
 #include <QMediaPlayer>
 
 #include "health.h"
+#include "score.h"
 #include "bullet.h"
-
 
 using namespace std;
 
@@ -24,7 +24,7 @@ class Player : public QObject, public QGraphicsPixmapItem
 private:
     string name;
     Health* health;
-    int score;
+    Score* score;
     int fuel;
     QGraphicsView* view ;
 
@@ -36,6 +36,10 @@ public:
     void showLoseDialog();
     void increaseHealth();
     void decreaseHealth();
+    void increaseScore(int incScore) ;
+//    void decreaseScore();
+    Score* getScore();
+    Health* getHealth();
 private:
     QMediaPlayer* bulletsound;
 };

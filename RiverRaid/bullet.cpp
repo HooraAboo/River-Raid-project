@@ -14,7 +14,7 @@ void Bullet::move(){
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (int i = 0; i < colliding_items.size(); ++i){
         if (typeid(*(colliding_items[i])) == typeid(Ship)){
-            cout << "Bullet collided with enemy!" << endl ;
+//            cout << "Bullet collided with enemy!" << endl ;
             Enemy* enemy = (Enemy*) colliding_items[i] ;
             enemy->damage();
             scene()->removeItem(this);

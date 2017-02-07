@@ -3,14 +3,16 @@
 
 #include <QGraphicsTextItem>
 #include <QFont>
-
+#include <iostream>
+#include <QGraphicsScene>
 using namespace std;
 
-class Score: public QGraphicsTextItem{
+class Score: public QGraphicsTextItem {
 public:
-    Score();
+    Score(int score , QGraphicsScene* scene);
     void increase(int);
-
+    int getScore();
+    void remove();
 private:
     int score;
 };

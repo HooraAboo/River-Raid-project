@@ -22,7 +22,6 @@ SOURCES += main.cpp \
     health.cpp \
     ship.cpp \
     enemyspawner.cpp \
-    explosionhandler.cpp \
     fuel.cpp
 
 HEADERS  += \
@@ -34,7 +33,6 @@ HEADERS  += \
     health.h \
     ship.h \
     enemyspawner.h \
-    explosionhandler.h \
     fuel.h
 FORMS    +=
 
