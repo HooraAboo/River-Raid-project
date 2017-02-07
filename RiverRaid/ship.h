@@ -7,6 +7,7 @@
 #include <QObject>
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
+
 class Ship : public Enemy
 {
 public:

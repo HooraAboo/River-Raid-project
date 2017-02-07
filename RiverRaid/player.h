@@ -10,9 +10,11 @@
 #include <QPixmap>
 #include <QKeyEvent>
 #include <iostream>
+#include <QMediaPlayer>
 
 #include "health.h"
 #include "score.h"
+#include "bullet.h"
 
 using namespace std;
 
@@ -38,6 +40,8 @@ public:
 //    void decreaseScore();
     Score* getScore();
     Health* getHealth();
+private:
+    QMediaPlayer* bulletsound;
 };
 
 #endif // PLAYER_H

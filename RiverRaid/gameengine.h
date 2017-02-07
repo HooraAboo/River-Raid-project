@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QTimer>
 #include <cstdlib>
+#include <QMediaPlayer>
 
 
 #include "player.h"
@@ -15,6 +16,7 @@
 #include "health.h"
 #include "ship.h"
 #include "enemyspawner.h"
+#include "fuel.h"
 
 
 using namespace Qt;

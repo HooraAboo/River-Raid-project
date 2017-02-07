@@ -1,21 +1,29 @@
 #include "player.h"
-#include "bullet.h"
+
 
 
 Player::Player(string playerName, QGraphicsView* view)
 {
     this->view = view ;
+    //set image
     setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
+
     name = playerName;
 //    score = new Score(0 , scene());
 //    scene()->addItem(score);
     health = new Health(scene(), 3);
     fuel = 10;
 
+    //set pos
     this->setPos(420 , 500);
+
     //rotate player
     this->setTransformOriginPoint(50,50);
     this->setRotation(-90);
+
+    //bullet sound
+    bulletsound = new QMediaPlayer();
+    bulletsound->setMedia(QUrl("qrc:/sounds/bullet.wav"));
 }
 
 void Player::damage()
@@ -53,6 +61,14 @@ void Player::keyPressEvent(QKeyEvent *event)
         Bullet * bullet = new Bullet();
         bullet->setPos(this->x()+19, this->y()-40);
         scene()->addItem(bullet);
+
+        //play bullet sound
+        if (bulletsound->state() == QMediaPlayer::PlayingState){
+            bulletsound->setPosition(0);
+        }
+        else if (bulletsound->state() == QMediaPlayer::StoppedState){
+            bulletsound->play();
+        }
    }
 //    else if (event->key() == Qt::Key_Alt){
 
