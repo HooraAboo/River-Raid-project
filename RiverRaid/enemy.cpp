@@ -8,17 +8,22 @@ void Enemy::damage()
     health-- ;
     if(health <= 0){
         explode();
+        scene()->removeItem(this);
+        delete this ;
+        return ;
+
     }
 }
 
 void Enemy::explode()
 {
-    this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width() , this->pixmap().height()));
     Player* player = (Player*) scene()->focusItem() ;
     player->increaseScore(score);
-    QTimer::singleShot(500 , this , SLOT(remove())) ;
+    int x = this->x() ;
+    int y = this->y() ;
+    cout << "item removed!" << endl ;
+    Explosion* exlosion = new Explosion(x, y, this->scene())  ;
     return ;
-
 }
 
 void Enemy::move()
@@ -29,7 +34,10 @@ void Enemy::move()
             cout << "Enemy collided with player!" ;
             this->explode();
             Player* player = (Player*) colliding_Items[i] ;
-            player->damage();
+            player->getHealth()->decreaseHealth();
+            this->scene()->removeItem(this);
+            delete this ;
+            return ;
         }
     }
 

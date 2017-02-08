@@ -2,6 +2,7 @@
 #define ENEMY_H
 
 #include "player.h"
+#include "explosion.h"
 
 #include <QObject>
 #include <QGraphicsPixmapItem>

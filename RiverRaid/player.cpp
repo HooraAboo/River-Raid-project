@@ -101,7 +101,9 @@ void Player::decreaseHealth(){
 }
 
 void Player::increaseScore(int incScore)
-{/*
+{
+    cout << "Score increased! " << endl ;
+    /*
     cout << "increase score called!" << endl ;
     scene()->removeItem(score);
     cout << "score removed!" << endl ;
