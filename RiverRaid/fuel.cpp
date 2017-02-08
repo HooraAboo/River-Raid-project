@@ -3,6 +3,7 @@
 Fuel::Fuel(QGraphicsView* view)
 {
     this->view = view ;
+    this->fuelAmaunt = 200 ;
     setPixmap(QPixmap(":/images/Fuel.png").scaled(50 , 50));
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;
@@ -19,9 +20,13 @@ void Fuel::move(){
     QList<QGraphicsItem*> colliding_Items = collidingItems() ;
     for (int i = 0; i < colliding_Items.size(); ++i) {
         if( typeid(*(colliding_Items[i])) == typeid(Player)){
-            cout << "Fuel collided with player!" ;
-            this->explode();
+//            this->explode();
+
             Player* player = (Player*) colliding_Items[i] ;
+            player->fuel += 5 ;
+            cout << "Fuel collided with player! fuel : "
+                 << this->fuelAmaunt << endl;
+
         }
     }
 

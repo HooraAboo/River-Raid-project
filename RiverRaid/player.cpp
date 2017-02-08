@@ -12,7 +12,7 @@ Player::Player(string playerName, QGraphicsView* view)
 //    score = new Score(0 , scene());
 //    scene()->addItem(score);
     health = new Health(scene(), 3);
-    fuel = 10;
+    fuel = 200;
 
     //set pos
     this->setPos(420 , 500);
