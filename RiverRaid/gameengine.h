@@ -15,7 +15,7 @@
 #include "score.h"
 #include "health.h"
 #include "ship.h"
-#include "enemyspawner.h"
+#include "spawner.h"
 #include "fuel.h"
 
 

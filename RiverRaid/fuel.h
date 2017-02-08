@@ -9,6 +9,7 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QList>
+#include <iostream>
 
 #include "player.h"
 
