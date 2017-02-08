@@ -4,7 +4,7 @@ Fuel::Fuel(QGraphicsView* view)
 {
     this->view = view ;
     cout << "fuel created!" << endl ;
-    setPixmap(QPixmap(":/images/Fuel.png").scaled(50 , 50));
+    setPixmap(QPixmap(":/images/Fuel.png").scaled(70 , 120));
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;
     setPos(randomX , 0) ;
@@ -27,7 +27,7 @@ void Fuel::move(){
         }
     }
 
-    setPos(x() + 5 , y() + 2.5 ) ;
+    setPos(x() , y() + 2 ) ;
 }
 
 void Fuel::explode(){

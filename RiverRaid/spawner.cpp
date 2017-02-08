@@ -9,11 +9,12 @@ void Spawner::spawnRandom()
 {
 //    cout << "enemy spawn called! " << endl ;
     int random = rand() ;
-    if (random % 4 == 0){ //fuel
+    if (random % 2 == 0){ //fuel
         Fuel* fuel = new Fuel(gameEngine);
+        fuel->setZValue(-1);
         gameEngine->scene()->addItem(fuel);
     }
-    else if(random % 4 == 1){ // Ship
+    else if(random % 2 == 1){ // Ship
         Enemy* ship = new Ship(gameEngine) ;
         gameEngine->scene()->addItem(ship);
 
