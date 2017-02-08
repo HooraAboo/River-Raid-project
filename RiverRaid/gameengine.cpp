@@ -36,7 +36,7 @@ GameEngine::GameEngine()
     // spawn enemies
     EnemySpawner * spawner =  new EnemySpawner(this) ;
     QTimer * timer = new QTimer() ;
-    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandomEnemy()) ) ;
+    connect(timer , SIGNAL(timeout()) ,spawner , SLOT(spawnRandom()) ) ;
 
     timer->start(2000);
 
@@ -48,9 +48,10 @@ GameEngine::GameEngine()
 
 
     // spawn fuel tank
-    Fuel* fuel = new Fuel(this);
-    timer = new QTimer();
-    connect(timer, SIGNAL(timeout()), fuel, SLOT(move()));
 
-    timer->start(6000);
+    QTimer* timer1 = new QTimer();
+    connect(timer1, SIGNAL(timeout()), this, SLOT(spawnRandom()));
+
+    timer->start(3000);
 }
+
