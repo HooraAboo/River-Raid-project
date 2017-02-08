@@ -23,7 +23,7 @@ void Fuel::move(){
             Player* player = (Player*) colliding_Items[i] ;
             player->fuel += 5 ;
             cout << "Fuel collided with player! fuel : "
-                 << this->fuelAmaunt << endl;
+                 << player->fuel << endl;
         }
     }
 

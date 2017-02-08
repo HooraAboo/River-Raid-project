@@ -17,6 +17,8 @@
 #include "gameengine.h"
 #include "fuel.h"
 
+class GameEngine ;
+
 class Spawner: public QObject
 {
     Q_OBJECT

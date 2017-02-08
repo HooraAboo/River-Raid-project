@@ -17,7 +17,7 @@
 #include "ship.h"
 #include "spawner.h"
 #include "fuel.h"
-
+#include "enemyspawner.h"
 
 using namespace Qt;
 

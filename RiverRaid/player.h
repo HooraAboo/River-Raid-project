@@ -25,10 +25,12 @@ private:
     string name;
     Health* health;
     Score* score;
-    int fuel;
     QGraphicsView* view ;
 
 public:
+
+        int fuel;
+
     Player(string, QGraphicsView*);
     void damage() ;
     void explodePlayerAndExit() ;
