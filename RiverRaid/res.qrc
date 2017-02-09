@@ -7,6 +7,7 @@
         <file>../Ship.png</file>
         <file>../Heart.png</file>
         <file>../Fuel.png</file>
+        <file>../Baloon.png</file>
     </qresource>
     <qresource prefix="/soundtrack">
         <file>BG sound.mp3</file>

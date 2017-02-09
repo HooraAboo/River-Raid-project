@@ -16,7 +16,7 @@ protected:
     int sceneSpeed = 2.5 ;
     int normalHorizontalSpeed = 1;
     int score ;
-    int speed ;
+    double speed ;
     int health ;
     char direction ;
     QGraphicsView* view ;
@@ -25,6 +25,7 @@ public:
     static QPixmap* shipImage;
     static QPixmap chopperImage ;
     static QPixmap jetImage ;
+    static QPixmap baloonImage ;
     void explode();
     void damage() ;
 

@@ -1,18 +1,17 @@
-#include "ship.h"
+#include "baloon.h"
 
-
-
-Ship::Ship(QGraphicsView *view)
+Baloon::Baloon(QGraphicsView* view)
 {
     this->view = view ;
-    this->health = 2 ;
-    this->score = 2 ;
-    this->speed = 0 ;
+    this->health = 1 ;
+    this->score = 1 ;
+    this->speed = 0.5 ;
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;
 
-    setPixmap(shipImage->scaled(40 , 40));
+//    setPixmap(baloonImage->scaled(40 , 40));
 
+    setPixmap(shipImage->scaled(40,40));
     setPos(randomX , 0) ;
 
     QTimer *timer = new QTimer() ;
@@ -20,5 +19,4 @@ Ship::Ship(QGraphicsView *view)
     connect(timer ,SIGNAL(timeout()) , this , SLOT(move()) ) ;
 
     timer->start(25);
-
 }

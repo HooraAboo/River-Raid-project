@@ -24,7 +24,8 @@ SOURCES += main.cpp \
     enemyspawner.cpp \
     fuel.cpp \
     spawner.cpp \
-    explosion.cpp
+    explosion.cpp \
+    baloon.cpp
 HEADERS  += \
     player.h \
     gameengine.h \
@@ -36,7 +37,8 @@ HEADERS  += \
     enemyspawner.h \
     fuel.h \
     spawner.h \
-    explosion.h
+    explosion.h \
+    baloon.h
 FORMS    +=
 
 RESOURCES += \
