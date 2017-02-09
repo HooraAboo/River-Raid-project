@@ -10,6 +10,8 @@
 #include <QList>
 #include <QTimer>
 #include <typeinfo>
+#include <QUuid>
+
 class Enemy: public QObject,public QGraphicsPixmapItem{
     Q_OBJECT
 protected:
@@ -22,15 +24,16 @@ protected:
     QGraphicsView* view ;
 public:
 
-    static QPixmap* shipImage;
-    static QPixmap chopperImage ;
-    static QPixmap jetImage ;
-    static QPixmap baloonImage ;
+    static QPixmap* rightShipImage;
+    static QPixmap* leftShipImage;
+    static QPixmap* rightJetImage ;
+    static QPixmap* leftJetImage ;
+    static QPixmap* baloonImage ;
     void explode();
     void damage() ;
 
 public slots:
-    void move() ;
+    virtual void move() ;
     void remove();
 
 };

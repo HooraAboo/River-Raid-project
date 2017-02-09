@@ -1,7 +1,10 @@
 #include "enemy.h"
 
-
-QPixmap* Enemy::shipImage = NULL;
+QPixmap* Enemy::rightShipImage = NULL ;
+QPixmap* Enemy::leftShipImage = NULL ;
+QPixmap* Enemy::rightJetImage = NULL ;
+QPixmap* Enemy::leftJetImage = NULL;
+QPixmap* Enemy::baloonImage = NULL ;
 
 void Enemy::damage()
 {
@@ -42,9 +45,10 @@ void Enemy::move()
     }
 
     setPos(x() + normalHorizontalSpeed * speed , y() + sceneSpeed ) ;
-    if(x() < 0 || x() > scene()->width()){
-        scene()->removeItem(this);
-        delete this ;
+    if(x() < 240 || x() > (590) ){
+//        scene()->removeItem(this);
+//        delete this ;
+        this->normalHorizontalSpeed *= -1 ;
         return ;
     }
     if(y() > scene()->height()){

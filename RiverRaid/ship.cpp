@@ -11,8 +11,13 @@ Ship::Ship(QGraphicsView *view)
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;
 
-    setPixmap(shipImage->scaled(40 , 40));
-
+    if(qrand() % 2){
+        setPixmap(leftShipImage->scaled(40 , 40));
+    }
+    else{
+        setPixmap(rightShipImage->scaled(40 , 40));
+        this->normalHorizontalSpeed *= -1 ;
+    }
     setPos(randomX , 0) ;
 
     QTimer *timer = new QTimer() ;

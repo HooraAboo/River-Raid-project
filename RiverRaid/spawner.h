@@ -16,6 +16,8 @@
 #include "ship.h"
 #include "gameengine.h"
 #include "fuel.h"
+#include "baloon.h"
+#include "jet.h"
 
 class GameEngine ;
 

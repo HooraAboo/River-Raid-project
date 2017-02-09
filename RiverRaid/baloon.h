@@ -11,7 +11,9 @@
 class Baloon : public Enemy
 {
 public:
+    Baloon();
     Baloon(QGraphicsView* view);
 };
+
 
 #endif // BALOON_H

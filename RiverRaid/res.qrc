@@ -4,10 +4,13 @@
         <file>../BackGround.png</file>
         <file>../Bullet.png</file>
         <file>../Explosion.png</file>
-        <file>../Ship.png</file>
         <file>../Heart.png</file>
         <file>../Fuel.png</file>
         <file>../Baloon.png</file>
+        <file>../LeftJet.png</file>
+        <file>../LeftShip.png</file>
+        <file>../RightJet.png</file>
+        <file>../RightShip.png</file>
     </qresource>
     <qresource prefix="/soundtrack">
         <file>BG sound.mp3</file>

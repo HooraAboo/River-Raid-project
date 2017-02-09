@@ -8,11 +8,13 @@
 #include <QList>
 #include <QApplication>
 #include "enemy.h"
+#include <typeinfo>
 
 class Bullet: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     Bullet();
+    bool isEnemy(QGraphicsItem* item);
 public slots:
     void move();
 };

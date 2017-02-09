@@ -6,12 +6,16 @@ Baloon::Baloon(QGraphicsView* view)
     this->health = 1 ;
     this->score = 1 ;
     this->speed = 0.5 ;
+
+    int rand = qrand();
+    if(rand % 2) this->normalHorizontalSpeed *= -1 ;
+
     int sceneWidth = 350; //this must be fixed!
-    int randomX = (rand()% sceneWidth + 240) ;
+    int randomX = (qrand()% sceneWidth + 240) ;
 
 //    setPixmap(baloonImage->scaled(40 , 40));
 
-    setPixmap(shipImage->scaled(40,40));
+    setPixmap(baloonImage->scaled(40,40));
     setPos(randomX , 0) ;
 
     QTimer *timer = new QTimer() ;
@@ -19,4 +23,9 @@ Baloon::Baloon(QGraphicsView* view)
     connect(timer ,SIGNAL(timeout()) , this , SLOT(move()) ) ;
 
     timer->start(25);
+}
+
+Baloon::Baloon()
+{
+
 }

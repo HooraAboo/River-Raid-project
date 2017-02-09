@@ -1,5 +1,6 @@
-#ifndef SHIP_H
-#define SHIP_H
+#ifndef JET_H
+#define JET_H
+
 
 #include "enemy.h"
 #include <cstdlib>
@@ -8,11 +9,13 @@
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
 
-
-class Ship : public Enemy
+class Jet : public Enemy
 {
 public:
-    Ship(QGraphicsView* view);
+    Jet(QGraphicsView* view);
+public slots :
+    virtual void move();
 };
 
-#endif // SHIP_H
+
+#endif // JET_H

@@ -30,7 +30,14 @@ void Fuel::move(){
     setPos(x() , y() + 2 ) ;
 }
 
-void Fuel::explode(){
-    this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width() , this->pixmap().height()));
-    return;
+void Fuel::explode()
+{
+    Player* player = (Player*) scene()->focusItem() ;
+    player->increaseScore(5); // must be replaced with decreaseScore() ;
+    int x = this->x() ;
+    int y = this->y() ;
+    cout << "item removed!" << endl ;
+    Explosion* exlosion = new Explosion(x, y, this->scene())  ;
+    return ;
 }
+

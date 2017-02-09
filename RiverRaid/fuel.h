@@ -10,7 +10,7 @@
 #include <QPixmap>
 #include <QList>
 #include <iostream>
-
+#include "explosion.h"
 #include "player.h"
 
 class Fuel: public QObject, public QGraphicsPixmapItem{
