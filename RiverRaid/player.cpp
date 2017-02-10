@@ -1,6 +1,6 @@
 #include "player.h"
 
-
+extern GameEngine* game;
 
 Player::Player(string playerName, QGraphicsView* view)
 {
@@ -35,8 +35,8 @@ void Player::explodePlayerAndExit()
 {
     this->setPixmap(QPixmap(":/images/Explosion.png").scaled(this->pixmap().width()
                                                              , this->pixmap().height()));
-    scene()->removeItem(this);
-    delete this;
+//    scene()->removeItem(this);
+//    delete this;
     showLoseDialog();
     return ;
 
@@ -48,13 +48,22 @@ void Player::keyPressEvent(QKeyEvent *event)
     if (event->key() == Qt::Key_Right){
         if(pos().x() < view->rect().width()- /*this->pixmap().width()*/310){
             setPos(x()+10 , y());
-        } else explodePlayerAndExit();
-
+        } else {
+            game->health->decreaseHealth();
+            explodePlayerAndExit();
+            setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
+            this->setPos(420 , 500);
+        }
     }
     else if (event->key() == Qt::Key_Left){
         if(pos().x() > 240){
             setPos(x()-10 , y());
-        } else explodePlayerAndExit();
+        } else {
+            game->health->decreaseHealth();
+            explodePlayerAndExit();
+            setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
+            this->setPos(420 , 500);
+        }
 
     }
     else if (event->key() == Qt::Key_Space){
@@ -86,7 +95,7 @@ void Player::keyPressEvent(QKeyEvent *event)
 void Player::showLoseDialog()
 {
     cout << "You Lost!!!" << endl ; // TODO : this must be replaced with a proper message !
-    QApplication::quit() ;
+//    QApplication::quit() ;
 }
 
 //void Player::increaseHealth(){

@@ -6,6 +6,9 @@ double GameEngine::normalHorizontalSpeed = 1;
 
 GameEngine::GameEngine()
 {
+//    if(health->getHealthNum() == 0){
+//        QApplication::quit() ;
+//    }
     // set the scene
     QGraphicsScene * scene = new QGraphicsScene();
     scene->setSceneRect(0,0,900,613);

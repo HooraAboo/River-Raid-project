@@ -40,6 +40,7 @@ void Enemy::move()
             this->explode();
             Player* player = (Player*) colliding_Items[i] ;
             game->health->decreaseHealth();
+            player->setPos(420 , 500);
             this->scene()->removeItem(this);
             delete this ;
             return ;

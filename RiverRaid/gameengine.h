@@ -33,13 +33,13 @@ class GameEngine : public QGraphicsView
     Player* player ;
 
 public:
+    Score * score ;
+    Health * health ;
     static double sceneSpeed  ;
     static double normalHorizontalSpeed ;
     GameEngine();
     double getSceneSpeed();
     double getNormalHorizontalSpeed();
-    Score * score ;
-    Health * health ;
 };
 
 #endif // GAMEENGINE_H
