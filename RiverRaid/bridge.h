@@ -20,6 +20,7 @@ class Bridge : public QObject , public QGraphicsPixmapItem
 public:
     static QPixmap* bridgeImage ;
     Bridge(GameEngine* gameEngine);
+    void explode();
 public slots:
     void move() ;
 };

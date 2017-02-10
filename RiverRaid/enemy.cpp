@@ -42,6 +42,11 @@ void Enemy::move()
             delete this ;
             return ;
         }
+        else if(typeid(*colliding_Items[i]) == typeid(Wall)){
+            scene()->removeItem(this);
+            delete this ;
+            return ;
+        }
     }
 
     setPos(x() + normalHorizontalSpeed * speed , y() + engine->getSceneSpeed() ) ;

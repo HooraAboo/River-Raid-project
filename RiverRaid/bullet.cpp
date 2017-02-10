@@ -2,7 +2,7 @@
 #include "ship.h"
 #include "baloon.h"
 #include "jet.h"
-
+#include "bridge.h"
 int Bullet::bulletCount = 0 ;
 
 Bullet::Bullet(){
@@ -48,7 +48,23 @@ void Bullet::move(){
             scene()->removeItem(fuel);
             delete fuel ;
             scene()->removeItem(this);
-            bulletCount--;
+            Bullet::bulletCount--;
+            delete this ;
+            return ;
+        }
+        else if(typeid(*colliding_items[i]) == typeid(Bridge)){
+            cout << "bullet collided with bridge" << endl ;
+            Bridge* bridge = (Bridge*) colliding_items[i] ;
+            bridge->explode();
+            scene()->removeItem(bridge);
+            delete bridge ;
+            scene()->removeItem(this);
+            Bullet::bulletCount--;
+            delete this ;
+            return ;
+        }
+        else if(typeid(*colliding_items[i]) == typeid(Wall)){
+            scene()->removeItem(this);
             delete this ;
             return ;
         }
@@ -57,7 +73,7 @@ void Bullet::move(){
     this->setPos(x(), y()-15);
     if(this->pos().y() < 0){
          scene()->removeItem(this);
-         bulletCount--;
+         Bullet::bulletCount--;
          delete this;
     }
 }

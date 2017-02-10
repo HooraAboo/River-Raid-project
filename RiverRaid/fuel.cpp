@@ -1,8 +1,8 @@
 #include "fuel.h"
 
-Fuel::Fuel(QGraphicsView* view)
+Fuel::Fuel(GameEngine* engine)
 {
-    this->view = view ;
+    this->engine = engine ;
     cout << "fuel created!" << endl ;
     setPixmap(QPixmap(":/images/Fuel.png").scaled(40 , 70));
     int sceneWidth = 350; //this must be fixed!
@@ -27,7 +27,7 @@ void Fuel::move(){
         }
     }
 
-    setPos(x() , y() + 2 ) ;
+    setPos(x() , y() + engine->getSceneSpeed() ) ;
 }
 
 void Fuel::explode()
