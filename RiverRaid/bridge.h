@@ -1,11 +1,27 @@
 #ifndef BRIDGE_H
 #define BRIDGE_H
 
+#include <QObject>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsView>
+#include <QList>
+#include <QTimer>
+#include <typeinfo>
+#include <QUuid>
 
-class Bridge
+#include "gameengine.h"
+
+class GameEngine ;
+
+class Bridge : public QObject , public QGraphicsPixmapItem
 {
+    Q_OBJECT
+    GameEngine* engine ;
 public:
-    Bridge();
+    static QPixmap* bridgeImage ;
+    Bridge(GameEngine* gameEngine);
+public slots:
+    void move() ;
 };
 
 #endif // BRIDGE_H

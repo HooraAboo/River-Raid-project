@@ -10,14 +10,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "player.h"
-#include "score.h"
-#include "health.h"
-#include "ship.h"
 #include "gameengine.h"
-#include "fuel.h"
-#include "baloon.h"
-#include "jet.h"
 
 class GameEngine ;
 

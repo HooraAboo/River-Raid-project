@@ -26,7 +26,10 @@ SOURCES += main.cpp \
     spawner.cpp \
     explosion.cpp \
     baloon.cpp \
-    jet.cpp
+    jet.cpp \
+    bridge.cpp \
+    wall.cpp \
+    levelhandler.cpp
 HEADERS  += \
     player.h \
     gameengine.h \
@@ -40,7 +43,10 @@ HEADERS  += \
     spawner.h \
     explosion.h \
     baloon.h \
-    jet.h
+    jet.h \
+    bridge.h \
+    wall.h \
+    levelhandler.h
 FORMS    +=
 
 RESOURCES += \

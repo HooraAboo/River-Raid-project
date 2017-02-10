@@ -1,8 +1,13 @@
 #include "explosion.h"
 
-Explosion::Explosion(int x , int y , QGraphicsScene* scene)
+Explosion::Explosion(int x , int y , QGraphicsScene* scene , string type)
 {
-    this->setPixmap(QPixmap(":/images/Explosion.png").scaled(50 ,50));
+    if(type == "enemy"){
+        this->setPixmap(QPixmap(":/images/Explosion.png").scaled(50 ,50));
+    }
+    else{
+        this->setPixmap(QPixmap(":/images/Explosion.png").scaled(70 ,120));
+    }
     setPos(x, y);
     scene->addItem(this);
     QTimer* timer = new QTimer();

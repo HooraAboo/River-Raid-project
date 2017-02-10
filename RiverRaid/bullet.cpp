@@ -2,8 +2,6 @@
 #include "ship.h"
 #include "baloon.h"
 #include "jet.h"
-#include "fuel.h"
-
 Bullet::Bullet(){
     this->setPixmap(QPixmap(":/images/Bullet.png").scaled(12 , 12));
     setTransformOriginPoint(50,50);

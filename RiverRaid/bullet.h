@@ -7,8 +7,9 @@
 #include <QTimer>
 #include <QList>
 #include <QApplication>
-#include "enemy.h"
 #include <typeinfo>
+
+
 
 class Bullet: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT

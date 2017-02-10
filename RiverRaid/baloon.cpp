@@ -6,7 +6,7 @@ Baloon::Baloon(QGraphicsView* view)
     this->health = 1 ;
     this->score = 1 ;
     this->speed = 0.5 ;
-
+    this->normalHorizontalSpeed = engine->getNormalHorizontalSpeed() ;
     int rand = qrand();
     if(rand % 2) this->normalHorizontalSpeed *= -1 ;
 
@@ -25,7 +25,3 @@ Baloon::Baloon(QGraphicsView* view)
     timer->start(25);
 }
 
-Baloon::Baloon()
-{
-
-}

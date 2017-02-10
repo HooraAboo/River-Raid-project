@@ -11,6 +11,9 @@
         <file>../LeftShip.png</file>
         <file>../RightJet.png</file>
         <file>../RightShip.png</file>
+        <file>../LeftWall.png</file>
+        <file>../RightWall.png</file>
+        <file>../Bridge.png</file>
     </qresource>
     <qresource prefix="/soundtrack">
         <file>BG sound.mp3</file>

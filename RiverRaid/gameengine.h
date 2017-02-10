@@ -10,17 +10,21 @@
 #include <cstdlib>
 #include <QMediaPlayer>
 
-
 #include "player.h"
 #include "score.h"
 #include "health.h"
-#include "ship.h"
 #include "spawner.h"
 #include "fuel.h"
 #include "enemyspawner.h"
-
+#include "bullet.h"
+#include "enemy.h"
+#include "levelhandler.h"
+#include "wall.h"
+#include "bridge.h"
 using namespace Qt;
 
+class Enemy ;
+class Player ;
 
 class GameEngine : public QGraphicsView
 {
@@ -28,8 +32,13 @@ class GameEngine : public QGraphicsView
     Player* player ;
     Score * score ;
     Health * health ;
+
 public:
+    static double sceneSpeed  ;
+    static double normalHorizontalSpeed ;
     GameEngine();
+    double getSceneSpeed();
+    double getNormalHorizontalSpeed();
 };
 
 #endif // GAMEENGINE_H

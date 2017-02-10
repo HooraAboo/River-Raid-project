@@ -25,7 +25,7 @@ void Enemy::explode()
     int x = this->x() ;
     int y = this->y() ;
     cout << "item removed!" << endl ;
-    Explosion* exlosion = new Explosion(x, y, this->scene())  ;
+    Explosion* exlosion = new Explosion(x, y, this->scene() , "enemy")  ;
     return ;
 }
 
@@ -44,11 +44,11 @@ void Enemy::move()
         }
     }
 
-    setPos(x() + normalHorizontalSpeed * speed , y() + sceneSpeed ) ;
+    setPos(x() + normalHorizontalSpeed * speed , y() + engine->getSceneSpeed() ) ;
     if(x() < 240 || x() > (590) ){
 //        scene()->removeItem(this);
 //        delete this ;
-        this->normalHorizontalSpeed *= -1 ;
+        normalHorizontalSpeed *= -1 ;
         return ;
     }
     if(y() > scene()->height()){

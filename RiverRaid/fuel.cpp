@@ -37,7 +37,7 @@ void Fuel::explode()
     int x = this->x() ;
     int y = this->y() ;
     cout << "item removed!" << endl ;
-    Explosion* exlosion = new Explosion(x, y, this->scene())  ;
+    Explosion* exlosion = new Explosion(x, y, this->scene() , "fuel")  ;
     return ;
 }
 

@@ -1,5 +1,7 @@
 #include "enemyspawner.h"
-
+#include "ship.h"
+#include "jet.h"
+#include "baloon.h"
 EnemySpawner::EnemySpawner(GameEngine* engine)
 {
     this->gameEngine = engine ;

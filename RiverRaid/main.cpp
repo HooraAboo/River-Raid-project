@@ -1,7 +1,6 @@
 #include <QApplication>
 #include <iostream>
 
-#include "player.h"
 #include "gameengine.h"
 using namespace Qt;
 
@@ -15,6 +14,10 @@ int main(int argc, char *argv[]){
     Enemy::leftJetImage = new QPixmap(":/images/LeftJet.png") ;
     Enemy::rightJetImage = new QPixmap(":/images/RightJet.png") ;
 
+    Wall::rightWallImage = new QPixmap(":/images/RightWall.png") ;
+    Wall::leftWallImage = new QPixmap(":/images/LeftWall.png") ;
+
+    Bridge::bridgeImage = new QPixmap(":/images/Bridge.png") ;
 
     GameEngine * game = new GameEngine() ;
     game->show();

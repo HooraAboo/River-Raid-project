@@ -1,9 +1,6 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "player.h"
-#include "explosion.h"
-
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsView>
@@ -12,11 +9,17 @@
 #include <typeinfo>
 #include <QUuid>
 
+#include "explosion.h"
+#include "gameengine.h"
+
+class GameEngine ;
+
 class Enemy: public QObject,public QGraphicsPixmapItem{
     Q_OBJECT
 protected:
-    int sceneSpeed = 2.5 ;
-    int normalHorizontalSpeed = 1;
+    GameEngine* engine ;
+    double normalHorizontalSpeed ;
+
     int score ;
     double speed ;
     int health ;

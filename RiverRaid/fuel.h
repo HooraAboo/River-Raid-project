@@ -10,8 +10,8 @@
 #include <QPixmap>
 #include <QList>
 #include <iostream>
-#include "explosion.h"
-#include "player.h"
+
+#include "gameengine.h"
 
 class Fuel: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT

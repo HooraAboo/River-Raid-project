@@ -9,10 +9,6 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "player.h"
-#include "score.h"
-#include "health.h"
-#include "ship.h"
 #include "gameengine.h"
 
 class GameEngine ;

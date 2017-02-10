@@ -1,7 +1,7 @@
 #ifndef BALOON_H
 #define BALOON_H
 
-#include "enemy.h"
+#include "gameengine.h"
 #include <cstdlib>
 #include <QTimer>
 #include <QObject>
@@ -11,7 +11,6 @@
 class Baloon : public Enemy
 {
 public:
-    Baloon();
     Baloon(QGraphicsView* view);
 };
 

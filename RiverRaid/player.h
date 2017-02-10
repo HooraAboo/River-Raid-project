@@ -12,11 +12,12 @@
 #include <iostream>
 #include <QMediaPlayer>
 
-#include "health.h"
-#include "score.h"
-#include "bullet.h"
+#include "gameengine.h"
 
 using namespace std;
+
+class Health;
+class Score ;
 
 class Player : public QObject, public QGraphicsPixmapItem
 {

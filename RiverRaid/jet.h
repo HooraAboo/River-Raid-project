@@ -2,12 +2,16 @@
 #define JET_H
 
 
-#include "enemy.h"
 #include <cstdlib>
 #include <QTimer>
 #include <QObject>
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
+#include "gameengine.h"
+
+#include "enemy.h"
+
+class Enemy ;
 
 class Jet : public Enemy
 {

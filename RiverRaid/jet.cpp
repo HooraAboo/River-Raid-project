@@ -5,7 +5,8 @@ Jet::Jet(QGraphicsView* view)
     this->view = view ;
     this->health = 1 ;
     this->score = 3 ;
-    this->speed = 10 ;
+    this->speed = 5 ;
+    this->normalHorizontalSpeed = engine->getNormalHorizontalSpeed() ;
     int sceneWidth = 350; //this must be fixed!
     int randomY = (qrand()% sceneWidth + 120) ;
 
@@ -43,7 +44,7 @@ void Jet::move()
         }
     }
 
-    setPos(x() + normalHorizontalSpeed * speed , y() + sceneSpeed ) ;
+    setPos(x() + normalHorizontalSpeed * speed , y() + engine->getSceneSpeed() ) ;
 //    if(x() < 240 || x() > (590) ){
 ////        scene()->removeItem(this);
 ////        delete this ;

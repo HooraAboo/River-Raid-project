@@ -1,21 +1,23 @@
 #ifndef EXPLOSION_H
 #define EXPLOSION_H
-#include "player.h"
-#include "enemy.h"
+
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsView>
 #include <QList>
 #include <QTimer>
 #include <typeinfo>
+#include <string>
 
-class Enemy ;
+
+
+using namespace std ;
 
 class Explosion: public QObject,public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    Explosion(int x , int y , QGraphicsScene* scene);
+    Explosion(int x , int y , QGraphicsScene* scene , string type);
 public slots:
     void move();
     void remove() ;

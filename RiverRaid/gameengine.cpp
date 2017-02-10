@@ -1,7 +1,14 @@
 #include "gameengine.h"
 
+double GameEngine::sceneSpeed = 2.5 ;
+double GameEngine::normalHorizontalSpeed = 1;
+
+
 GameEngine::GameEngine()
 {
+
+
+
     // set the scene
     QGraphicsScene * scene = new QGraphicsScene();
     scene->setSceneRect(0,0,900,613);
@@ -47,11 +54,32 @@ GameEngine::GameEngine()
     music->play();
 
 
+    // create a wall for test :
+    levelHandler* handler = new levelHandler(this) ;
+    QTimer* levelTimer = new QTimer() ;
+    connect(levelTimer , SIGNAL(timeout()) , handler , SLOT(nextLevel()) ) ;
+
+    levelTimer->start(15000);
+
+
+
+
+
     // spawn fuel tank
 
 //    QTimer* timer1 = new QTimer();
 //    connect(timer1, SIGNAL(timeout()), this, SLOT(spawnRandom()));
 
-//    timer->start(3000);
+    //    timer->start(3000);
+}
+
+double GameEngine::getSceneSpeed()
+{
+    return sceneSpeed ;
+}
+
+double GameEngine::getNormalHorizontalSpeed()
+{
+    return normalHorizontalSpeed ;
 }
 
