@@ -16,6 +16,12 @@ void Score::increase(int incScore){
     cout << "score increased!" << endl ;
 }
 
+void Score::decrease(){
+    score -= 10;
+    setPlainText(QString("Score: ") + QString::number(score));
+    cout << "score decreased!" << endl ;
+}
+
 int Score::getScore()
 {
     return score ;

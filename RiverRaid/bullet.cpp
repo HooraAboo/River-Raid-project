@@ -37,7 +37,7 @@ void Bullet::move(){
             scene()->removeItem(this);
 
             //increase score
-            game->score->increase(1);
+            game->score->increase(enemy->score);
 
             Bullet::bulletCount--;
             delete this;
@@ -51,6 +51,10 @@ void Bullet::move(){
             scene()->removeItem(fuel);
             delete fuel ;
             scene()->removeItem(this);
+
+            //increase score
+            game->score->decrease();
+
             Bullet::bulletCount--;
             delete this ;
             return ;
@@ -60,6 +64,10 @@ void Bullet::move(){
             Bridge* bridge = (Bridge*) colliding_items[i] ;
             bridge->explode();
             scene()->removeItem(bridge);
+
+            //increase score
+            game->score->increase(3);
+
             delete bridge ;
             scene()->removeItem(this);
             Bullet::bulletCount--;

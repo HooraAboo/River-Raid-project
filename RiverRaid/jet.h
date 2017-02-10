@@ -11,6 +11,8 @@
 
 #include "enemy.h"
 
+extern GameEngine* game;
+
 class Enemy ;
 
 class Jet : public Enemy

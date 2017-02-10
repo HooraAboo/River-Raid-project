@@ -41,7 +41,6 @@ void Health::decreaseHealth()
 void Health::explode()
 {
     Player* player = (Player*) scene()->focusItem() ;
-//    player->increaseScore(score);
     int x = this->x() ;
     int y = this->y() ;
     cout << "item removed!" << endl ;

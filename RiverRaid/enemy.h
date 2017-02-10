@@ -20,13 +20,13 @@ protected:
     GameEngine* engine ;
     double normalHorizontalSpeed ;
 
-    int score ;
     double speed ;
     int health ;
     char direction ;
     QGraphicsView* view ;
-public:
 
+public:
+    int score ;
     static QPixmap* rightShipImage;
     static QPixmap* leftShipImage;
     static QPixmap* rightJetImage ;

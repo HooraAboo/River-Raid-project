@@ -16,7 +16,6 @@ void Enemy::damage()
         scene()->removeItem(this);
         delete this ;
         return ;
-
     }
 }
 
@@ -45,6 +44,7 @@ void Enemy::move()
             return ;
         }
         else if(typeid(*colliding_Items[i]) == typeid(Wall)){
+            game->health->decreaseHealth();
             scene()->removeItem(this);
             delete this ;
             return ;

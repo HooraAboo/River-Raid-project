@@ -11,6 +11,7 @@ class Score: public QGraphicsTextItem {
 public:
     Score(int score , QGraphicsScene* scene);
     void increase(int);
+    void decrease();
     int getScore();
     void remove();
 private:
