@@ -26,7 +26,6 @@ private:
     Health* health;
     Score* score;
     QGraphicsView* view ;
-
 public:
 
         int fuel;
@@ -43,7 +42,7 @@ public:
     Score* getScore();
     Health* getHealth();
 private:
-    QMediaPlayer* bulletsound;
+    QMediaPlayer* bulletSound;
 };
 
 #endif // PLAYER_H

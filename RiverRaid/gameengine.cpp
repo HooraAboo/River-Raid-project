@@ -42,9 +42,9 @@ GameEngine::GameEngine()
 
 
     // play BG music
-    QMediaPlayer * music = new QMediaPlayer();
-    music->setMedia(QUrl("qrc:/soundtrack/BG sound.mp3"));
-    music->play();
+    QMediaPlayer * bgSound = new QMediaPlayer();
+    bgSound->setMedia(QUrl("qrc:/soundtrack/BackgroundSound.mp3"));
+    bgSound->play();
 
 
     // spawn fuel tank

@@ -10,7 +10,6 @@
 #include <cstdlib>
 #include <QMediaPlayer>
 
-
 #include "player.h"
 #include "score.h"
 #include "health.h"

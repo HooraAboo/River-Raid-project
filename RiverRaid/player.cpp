@@ -22,8 +22,8 @@ Player::Player(string playerName, QGraphicsView* view)
     this->setRotation(-90);
 
     //bullet sound
-    bulletsound = new QMediaPlayer();
-    bulletsound->setMedia(QUrl("qrc:/sounds/bullet.wav"));
+    bulletSound = new QMediaPlayer();
+    bulletSound->setMedia(QUrl("qrc:/soundtrack/Bullet.aiff"));
 }
 
 void Player::damage()
@@ -59,15 +59,18 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet();
-        bullet->setPos(this->x()+19, this->y()-40);
-        scene()->addItem(bullet);
+        if(bullet->bulletCount < 6){
+            bullet->bulletCount++;
+            bullet->setPos(this->x()+19, this->y()-40);
+            scene()->addItem(bullet);
+        }
 
         //play bullet sound
-        if (bulletsound->state() == QMediaPlayer::PlayingState){
-            bulletsound->setPosition(0);
+        if (bulletSound->state() == QMediaPlayer::PlayingState){
+            bulletSound->setPosition(0);
         }
-        else if (bulletsound->state() == QMediaPlayer::StoppedState){
-            bulletsound->play();
+        else if (bulletSound->state() == QMediaPlayer::StoppedState){
+            bulletSound->play();
         }
    }
 //    else if (event->key() == Qt::Key_Alt){

@@ -7,14 +7,21 @@
 #include <QTimer>
 #include <QList>
 #include <QApplication>
-#include "enemy.h"
 #include <typeinfo>
+
+#include "enemy.h"
+#include "ship.h"
+#include "baloon.h"
+#include "jet.h"
+#include "fuel.h"
+
 
 class Bullet: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     Bullet();
     bool isEnemy(QGraphicsItem* item);
+    static int bulletCount;
 public slots:
     void move();
 };
