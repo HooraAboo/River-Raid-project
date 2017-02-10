@@ -6,7 +6,6 @@
 int Bullet::bulletCount = 0 ;
 
 Bullet::Bullet(){
-    bulletCount =0;
     this->setPixmap(QPixmap(":/images/Bullet.png").scaled(12 , 12));
     setTransformOriginPoint(50,50);
     setRotation(-90);
@@ -48,7 +47,7 @@ void Bullet::move(){
             scene()->removeItem(fuel);
             delete fuel ;
             scene()->removeItem(this);
-            bulletCount--;
+            Bullet::bulletCount--;
             delete this ;
             return ;
         }
@@ -57,7 +56,7 @@ void Bullet::move(){
     this->setPos(x(), y()-15);
     if(this->pos().y() < 0){
          scene()->removeItem(this);
-         bulletCount--;
+         Bullet::bulletCount--;
          delete this;
     }
 }
