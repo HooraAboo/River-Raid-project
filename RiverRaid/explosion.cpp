@@ -5,8 +5,11 @@ Explosion::Explosion(int x , int y , QGraphicsScene* scene , string type)
     if(type == "enemy"){
         this->setPixmap(QPixmap(":/images/Explosion.png").scaled(50 ,50));
     }
-    else{
+    else if(type == "fuel"){
         this->setPixmap(QPixmap(":/images/Explosion.png").scaled(70 ,120));
+    }
+    else if(type == "bridge"){
+        this->setPixmap(QPixmap(":/images/Explosion.png").scaled(170 ,55));
     }
     setPos(x, y);
     scene->addItem(this);

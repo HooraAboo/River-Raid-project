@@ -19,6 +19,17 @@ Bridge::Bridge(GameEngine* engine)
 
 }
 
+void Bridge::explode()
+{
+    Player* player = (Player*) scene()->focusItem() ;
+    player->increaseScore(5);
+    int x = this->x() ;
+    int y = this->y() ;
+    cout << "item removed!" << endl ;
+    Explosion* exlosion = new Explosion(x, y, this->scene() , "bridge")  ;
+    return ;
+}
+
 void Bridge::move()
 {
     QList<QGraphicsItem*> colliding_Items = collidingItems() ;
@@ -28,6 +39,7 @@ void Bridge::move()
 //            this->explode();
             Player* player = (Player*) colliding_Items[i] ;
             player->getHealth()->decreaseHealth();
+            this->explode();
             this->scene()->removeItem(this);
             delete this ;
             return ;

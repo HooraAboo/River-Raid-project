@@ -13,16 +13,19 @@
 
 #include "gameengine.h"
 
+class GameEngine ;
+
 class Fuel: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
+
 public:
-    Fuel(QGraphicsView*);
+    Fuel(GameEngine* engine);
     void explode();
 
 public slots:
     void move();
 private:
-    QGraphicsView* view;
+    GameEngine* engine ;
 };
 
 #endif // FUEL_H
