@@ -6,7 +6,6 @@
 int Bullet::bulletCount = 0 ;
 
 Bullet::Bullet(){
-    bulletCount =0;
     this->setPixmap(QPixmap(":/images/Bullet.png").scaled(12 , 12));
     setTransformOriginPoint(50,50);
     setRotation(-90);
@@ -65,6 +64,7 @@ void Bullet::move(){
         }
         else if(typeid(*colliding_items[i]) == typeid(Wall)){
             scene()->removeItem(this);
+            Bullet::bulletCount-- ;
             delete this ;
             return ;
         }

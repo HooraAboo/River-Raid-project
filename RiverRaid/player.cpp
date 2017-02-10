@@ -58,22 +58,23 @@ void Player::keyPressEvent(QKeyEvent *event)
 
     }
     else if (event->key() == Qt::Key_Space){
-        Bullet * bullet = new Bullet();
-        if(Bullet::bulletCount < 6){
+        if(Bullet::bulletCount < 5){
+            Bullet * bullet = new Bullet();
             cout << Bullet::bulletCount << "   " ;
             Bullet::bulletCount ++;
             cout << Bullet::bulletCount << endl ;
             bullet->setPos(this->x()+19, this->y()-40);
             scene()->addItem(bullet);
+
+            //play bullet sound
+            if (bulletSound->state() == QMediaPlayer::PlayingState){
+                bulletSound->setPosition(0);
+            }
+            else if (bulletSound->state() == QMediaPlayer::StoppedState){
+                bulletSound->play();
+            }
         }
 
-        //play bullet sound
-        if (bulletSound->state() == QMediaPlayer::PlayingState){
-            bulletSound->setPosition(0);
-        }
-        else if (bulletSound->state() == QMediaPlayer::StoppedState){
-            bulletSound->play();
-        }
    }
 //    else if (event->key() == Qt::Key_Alt){
 
