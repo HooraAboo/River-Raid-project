@@ -43,11 +43,11 @@ void Health::explode()
     Player* player = (Player*) scene()->focusItem() ;
     int x = this->x() ;
     int y = this->y() ;
-    cout << "item removed!" << endl ;
+//    cout << "item removed!" << endl ;
     Explosion* exlosion = new Explosion(x, y, this->scene() , "...")  ;
     scene()->removeItem(this);
     delete this;
-    cout << "You Lost!!!" << endl ; // TODO : this must be replaced with a proper message !
+    cout << "You Lost!!!" << endl ;
     QApplication::quit() ;
     return ;
 }

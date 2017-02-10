@@ -17,7 +17,7 @@ Wall::Wall(GameEngine* gameEngine , char direction)
         setPos(525 , -120);
     }
 
-    cout << "wall created!" << endl ;
+//    cout << "wall created!" << endl ;
     QTimer *timer = new QTimer() ;
 
     connect(timer ,SIGNAL(timeout()) , this , SLOT(move()) ) ;
@@ -32,7 +32,7 @@ void Wall::move()
     QList<QGraphicsItem*> colliding_Items = collidingItems() ;
     for (int i = 0; i < colliding_Items.size(); ++i) {
         if( typeid(*(colliding_Items[i])) == typeid(Player)){
-            cout << "Enemy collided with player!" ;
+//            cout << "Enemy collided with player!" ;
 //            this->explode();
             Player* player = (Player*) colliding_Items[i] ;
             player->explodePlayerAndExit();

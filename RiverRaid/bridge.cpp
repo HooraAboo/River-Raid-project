@@ -10,7 +10,7 @@ Bridge::Bridge(GameEngine* engine)
     setPos(355 , 10);
 
 
-    cout << "Bridge created!" << endl ;
+//    cout << "Bridge created!" << endl ;
     QTimer *timer = new QTimer() ;
 
     connect(timer ,SIGNAL(timeout()) , this , SLOT(move()) ) ;
@@ -25,7 +25,7 @@ void Bridge::explode()
 //    player->increaseScore(5);
     int x = this->x() ;
     int y = this->y() ;
-    cout << "item removed!" << endl ;
+//    cout << "item removed!" << endl ;
     Explosion* exlosion = new Explosion(x, y, this->scene() , "bridge")  ;
     return ;
 }
@@ -35,7 +35,7 @@ void Bridge::move()
     QList<QGraphicsItem*> colliding_Items = collidingItems() ;
     for (int i = 0; i < colliding_Items.size(); ++i) {
         if( typeid(*(colliding_Items[i])) == typeid(Player)){
-            cout << "Bridge collided with player!" ;
+//            cout << "Bridge collided with player!" ;
 //            this->explode();
             Player* player = (Player*) colliding_Items[i] ;
             game->health->decreaseHealth();

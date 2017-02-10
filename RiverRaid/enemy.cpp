@@ -25,7 +25,7 @@ void Enemy::explode()
 //    player->increaseScore(score);
     int x = this->x() ;
     int y = this->y() ;
-    cout << "item removed!" << endl ;
+//    cout << "item removed!" << endl ;
     Explosion* exlosion = new Explosion(x, y, this->scene() , "enemy")  ;
     return ;
 }
@@ -35,7 +35,7 @@ void Enemy::move()
     QList<QGraphicsItem*> colliding_Items = collidingItems() ;
     for (int i = 0; i < colliding_Items.size(); ++i) {
         if( typeid(*(colliding_Items[i])) == typeid(Player)){
-            cout << "Enemy collided with player!" ;
+//            cout << "Enemy collided with player!" ;
             this->explode();
             Player* player = (Player*) colliding_Items[i] ;
             game->health->decreaseHealth();

@@ -9,8 +9,6 @@ Player::Player(string playerName, QGraphicsView* view)
     setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
 
     name = playerName;
-//    score = new Score(0 , scene());
-//    scene()->addItem(score);
     health = new Health(scene(), 3);
     fuel = 200;
 
@@ -25,11 +23,6 @@ Player::Player(string playerName, QGraphicsView* view)
     bulletSound = new QMediaPlayer();
     bulletSound->setMedia(QUrl("qrc:/soundtrack/Bullet.aiff"));
 }
-
-//void Player::damage()
-//{
-//    decreaseHealth();
-//}
 
 void Player::explodePlayerAndExit()
 {
@@ -67,9 +60,9 @@ void Player::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_Space){
         if(Bullet::bulletCount < 5){
             Bullet * bullet = new Bullet();
-            cout << Bullet::bulletCount << "   " ;
+//            cout << Bullet::bulletCount << "   " ;
             Bullet::bulletCount ++;
-            cout << Bullet::bulletCount << endl ;
+//            cout << Bullet::bulletCount << endl ;
             bullet->setPos(this->x()+19, this->y()-40);
             scene()->addItem(bullet);
 
@@ -83,11 +76,9 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
 
    }
-//    else if (event->key() == Qt::Key_Alt){
-
-//    }
-
-
+    else if (event->key() == Qt::Key_Escape){
+        showLoseDialog();
+    }
 }
 
 void Player::showLoseDialog()

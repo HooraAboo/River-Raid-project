@@ -34,7 +34,7 @@ void Jet::move()
     QList<QGraphicsItem*> colliding_Items = collidingItems() ;
     for (int i = 0; i < colliding_Items.size(); ++i) {
         if( typeid(*(colliding_Items[i])) == typeid(Player)){
-            cout << "Enemy collided with player!" ;
+//            cout << "Enemy collided with player!" ;
             this->explode();
             Player* player = (Player*) colliding_Items[i] ;
             game->health->decreaseHealth();

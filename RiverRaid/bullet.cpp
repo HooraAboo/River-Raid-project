@@ -31,7 +31,7 @@ void Bullet::move(){
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (int i = 0; i < colliding_items.size(); ++i){
         if (isEnemy(colliding_items[i])){
-            cout << "Bullet collided with enemy!" << endl ;
+//            cout << "Bullet collided with enemy!" << endl ;
             Enemy* enemy = (Enemy*) colliding_items[i] ;
             enemy->damage();
             scene()->removeItem(this);
@@ -45,7 +45,7 @@ void Bullet::move(){
         }
         else if(typeid(*colliding_items[i]) == typeid(Fuel))
         {
-            cout << "bullet collided with Fuel tank" << endl ;
+//            cout << "bullet collided with Fuel tank" << endl ;
             Fuel* fuel = (Fuel*) colliding_items[i] ;
             fuel->explode();
             scene()->removeItem(fuel);
@@ -60,7 +60,7 @@ void Bullet::move(){
             return ;
         }
         else if(typeid(*colliding_items[i]) == typeid(Bridge)){
-            cout << "bullet collided with bridge" << endl ;
+//            cout << "bullet collided with bridge" << endl ;
             Bridge* bridge = (Bridge*) colliding_items[i] ;
             bridge->explode();
             scene()->removeItem(bridge);

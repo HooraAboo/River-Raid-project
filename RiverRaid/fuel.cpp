@@ -3,7 +3,7 @@
 Fuel::Fuel(GameEngine* engine)
 {
     this->engine = engine ;
-    cout << "fuel created!" << endl ;
+//    cout << "fuel created!" << endl ;
     setPixmap(QPixmap(":/images/Fuel.png").scaled(40 , 70));
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;
@@ -34,7 +34,7 @@ void Fuel::explode()
 //    player->increaseScore(5); // must be replaced with decreaseScore() ;
     int x = this->x() ;
     int y = this->y() ;
-    cout << "item removed!" << endl ;
+//    cout << "item removed!" << endl ;
     Explosion* exlosion = new Explosion(x, y, this->scene() , "fuel")  ;
     return ;
 }

@@ -28,6 +28,6 @@ void Spawner::spawnRandom()
     else if(random % 4 == 3){ // Jet
         Enemy* jet = new Jet(gameEngine) ;
         gameEngine->scene()->addItem(jet);
-        cout << "Jet created!" << endl ;
+//        cout << "Jet created!" << endl ;
     }
 }

@@ -6,9 +6,6 @@ double GameEngine::normalHorizontalSpeed = 1;
 
 GameEngine::GameEngine()
 {
-//    if(health->getHealthNum() == 0){
-//        QApplication::quit() ;
-//    }
     // set the scene
     QGraphicsScene * scene = new QGraphicsScene();
     scene->setSceneRect(0,0,900,613);
@@ -67,17 +64,6 @@ GameEngine::GameEngine()
     connect(levelTimer , SIGNAL(timeout()) , handler , SLOT(nextLevel()) ) ;
 
     levelTimer->start(15000);
-
-
-
-
-
-    // spawn fuel tank
-
-//    QTimer* timer1 = new QTimer();
-//    connect(timer1, SIGNAL(timeout()), this, SLOT(spawnRandom()));
-
-    //    timer->start(3000);
 }
 
 double GameEngine::getSceneSpeed()
