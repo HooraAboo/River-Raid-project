@@ -30,4 +30,6 @@ void Health::decreaseHealth()
 {
     health -- ;
     setPlainText(QString("Health: ") + QString::number(health));
+
+
 }

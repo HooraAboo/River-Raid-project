@@ -39,6 +39,10 @@ GameEngine::GameEngine()
     scene->addItem(health);
 
 
+    // set the fuel
+    fuel = new PlayerFuel(scene , 500) ;
+    scene->addItem(fuel);
+
     // spawn enemies
     Spawner * spawner =  new Spawner(this) ;
     QTimer * timer = new QTimer() ;

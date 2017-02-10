@@ -22,6 +22,7 @@
 #include "levelhandler.h"
 #include "wall.h"
 #include "bridge.h"
+#include "playerfuel.h"
 using namespace Qt;
 
 class Enemy ;
@@ -35,6 +36,7 @@ class GameEngine : public QGraphicsView
 public:
     Score * score ;
     Health * health ;
+    PlayerFuel * fuel ;
     static double sceneSpeed  ;
     static double normalHorizontalSpeed ;
     GameEngine();

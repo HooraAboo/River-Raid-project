@@ -95,7 +95,7 @@ void Player::keyPressEvent(QKeyEvent *event)
 void Player::showLoseDialog()
 {
     cout << "You Lost!!!" << endl ; // TODO : this must be replaced with a proper message !
-//    QApplication::quit() ;
+    QApplication::quit() ;
 }
 
 //void Player::increaseHealth(){

@@ -28,7 +28,8 @@ SOURCES += main.cpp \
     jet.cpp \
     bridge.cpp \
     wall.cpp \
-    levelhandler.cpp
+    levelhandler.cpp \
+    playerfuel.cpp
 HEADERS  += \
     player.h \
     gameengine.h \
@@ -45,7 +46,8 @@ HEADERS  += \
     jet.h \
     bridge.h \
     wall.h \
-    levelhandler.h
+    levelhandler.h \
+    playerfuel.h
 FORMS    +=
 
 RESOURCES += \
