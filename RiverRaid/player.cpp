@@ -52,7 +52,6 @@ void Player::keyPressEvent(QKeyEvent *event)
             game->health->decreaseHealth();
             explodePlayerAndExit();
             setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
-            this->setPos(420 , 500);
         }
     }
     else if (event->key() == Qt::Key_Left){
@@ -62,7 +61,6 @@ void Player::keyPressEvent(QKeyEvent *event)
             game->health->decreaseHealth();
             explodePlayerAndExit();
             setPixmap(QPixmap(":/images/Player.png").scaled(50 , 50));
-            this->setPos(420 , 500);
         }
 
     }
@@ -97,47 +95,3 @@ void Player::showLoseDialog()
     cout << "You Lost!!!" << endl ; // TODO : this must be replaced with a proper message !
     QApplication::quit() ;
 }
-
-//void Player::increaseHealth(){
-//    int h = health->getHealthNum();
-//    health->removeHeart();
-//    delete health ;
-//    health = new Health(scene(), ++h);
-//}
-
-//void Player::decreaseHealth(){
-//    int h = health->getHealthNum();
-//    delete health ;
-//    if(h > 0){
-//        health = new Health(scene(), --h);
-//    }
-//    else
-//        explodePlayerAndExit();
-//}
-
-//void Player::increaseScore(int incScore)
-//{
-//    cout << "Score increased! " << endl ;
-//    /*
-//    cout << "increase score called!" << endl ;
-//    scene()->removeItem(score);
-//    cout << "score removed!" << endl ;
-//    int s = this->score->getScore() ;
-
-//    delete score ;
-
-//    score = new Score(s+incScore , scene()) ;
-////    scene()->addItem(score);*/
-
-//}
-
-
-//Score *Player::getScore()
-//{
-//    return score ;
-//}
-
-//Health *Player::getHealth()
-//{
-//    return health ;
-//}

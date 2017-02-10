@@ -8,6 +8,10 @@
 #include <QImage>
 #include <iostream>
 
+#include "gameengine.h"
+
+class GameEngine ;
+
 using namespace std ;
 class Health: public QGraphicsTextItem {
 public:
@@ -15,6 +19,7 @@ public:
     int getHealthNum();
     void removeHeart();
     void decreaseHealth();
+    void explode();
 private:
     int health;
     QGraphicsPixmapItem* heart[10] ; // hahaha! :)))
