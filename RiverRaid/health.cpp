@@ -1,5 +1,7 @@
 #include "health.h"
 
+extern GameEngine* game;
+
 Health::Health(QGraphicsScene * scene , int h)
 {
 
@@ -28,6 +30,25 @@ void Health::removeHeart(){
 
 void Health::decreaseHealth()
 {
-    health -- ;
-    setPlainText(QString("Health: ") + QString::number(health));
+    if(health > 0){
+        health -- ;
+        setPlainText(QString("Health: ") + QString::number(health));
+    } else{
+        explode();
+    }
+}
+
+void Health::explode()
+{
+    Player* player = (Player*) scene()->focusItem() ;
+//    player->increaseScore(score);
+    int x = this->x() ;
+    int y = this->y() ;
+    cout << "item removed!" << endl ;
+    Explosion* exlosion = new Explosion(x, y, this->scene() , "...")  ;
+    scene()->removeItem(this);
+    delete this;
+    cout << "You Lost!!!" << endl ; // TODO : this must be replaced with a proper message !
+    QApplication::quit() ;
+    return ;
 }

@@ -11,6 +11,8 @@
 
 #include "gameengine.h"
 
+extern GameEngine* game;
+
 class GameEngine ;
 
 class Bridge : public QObject , public QGraphicsPixmapItem
