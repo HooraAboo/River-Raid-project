@@ -37,7 +37,7 @@ void Bullet::move(){
             scene()->removeItem(this);
 
             //increase score
-            game->score->increase(2);
+            game->score->increase(1);
 
             Bullet::bulletCount--;
             delete this;

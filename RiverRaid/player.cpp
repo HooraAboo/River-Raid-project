@@ -26,10 +26,10 @@ Player::Player(string playerName, QGraphicsView* view)
     bulletSound->setMedia(QUrl("qrc:/soundtrack/Bullet.aiff"));
 }
 
-void Player::damage()
-{
-    decreaseHealth();
-}
+//void Player::damage()
+//{
+//    decreaseHealth();
+//}
 
 void Player::explodePlayerAndExit()
 {
@@ -89,46 +89,46 @@ void Player::showLoseDialog()
     QApplication::quit() ;
 }
 
-void Player::increaseHealth(){
-    int h = health->getHealthNum();
-    health->removeHeart();
-    delete health ;
-    health = new Health(scene(), ++h);
-}
+//void Player::increaseHealth(){
+//    int h = health->getHealthNum();
+//    health->removeHeart();
+//    delete health ;
+//    health = new Health(scene(), ++h);
+//}
 
-void Player::decreaseHealth(){
-    int h = health->getHealthNum();
-    delete health ;
-    if(h > 0){
-        health = new Health(scene(), --h);
-    }
-    else
-        explodePlayerAndExit();
-}
+//void Player::decreaseHealth(){
+//    int h = health->getHealthNum();
+//    delete health ;
+//    if(h > 0){
+//        health = new Health(scene(), --h);
+//    }
+//    else
+//        explodePlayerAndExit();
+//}
 
-void Player::increaseScore(int incScore)
-{
-    cout << "Score increased! " << endl ;
-    /*
-    cout << "increase score called!" << endl ;
-    scene()->removeItem(score);
-    cout << "score removed!" << endl ;
-    int s = this->score->getScore() ;
+//void Player::increaseScore(int incScore)
+//{
+//    cout << "Score increased! " << endl ;
+//    /*
+//    cout << "increase score called!" << endl ;
+//    scene()->removeItem(score);
+//    cout << "score removed!" << endl ;
+//    int s = this->score->getScore() ;
 
-    delete score ;
+//    delete score ;
 
-    score = new Score(s+incScore , scene()) ;
-//    scene()->addItem(score);*/
+//    score = new Score(s+incScore , scene()) ;
+////    scene()->addItem(score);*/
 
-}
+//}
 
 
-Score *Player::getScore()
-{
-    return score ;
-}
+//Score *Player::getScore()
+//{
+//    return score ;
+//}
 
-Health *Player::getHealth()
-{
-    return health ;
-}
+//Health *Player::getHealth()
+//{
+//    return health ;
+//}

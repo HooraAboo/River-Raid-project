@@ -36,9 +36,9 @@ public:
     void explodePlayerAndExit() ;
     void keyPressEvent(QKeyEvent * event);
     void showLoseDialog();
-    void increaseHealth();
-    void decreaseHealth();
-    void increaseScore(int incScore) ;
+//    void increaseHealth();
+//    void decreaseHealth();
+//    void increaseScore(int incScore) ;
 //    void decreaseScore();
     Score* getScore();
     Health* getHealth();

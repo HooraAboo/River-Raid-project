@@ -33,7 +33,7 @@ void Fuel::move(){
 void Fuel::explode()
 {
     Player* player = (Player*) scene()->focusItem() ;
-    player->increaseScore(5); // must be replaced with decreaseScore() ;
+//    player->increaseScore(5); // must be replaced with decreaseScore() ;
     int x = this->x() ;
     int y = this->y() ;
     cout << "item removed!" << endl ;

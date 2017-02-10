@@ -29,8 +29,5 @@ void Health::removeHeart(){
 void Health::decreaseHealth()
 {
     health -- ;
-//    scene()->removeItem(this);
-    this->setPlainText(QString("Score: ") + QString::number(health));
-//    scene()->addItem(this);
-    cout << "health decreased!" << endl ;
+    setPlainText(QString("Health: ") + QString::number(health));
 }

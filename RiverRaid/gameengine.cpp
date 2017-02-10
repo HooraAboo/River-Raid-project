@@ -30,10 +30,9 @@ GameEngine::GameEngine()
 
     // set the score
     score = new Score(0 , scene);
-//    scene->addItem(score);
 
     // set the health
-    Health * health = new Health(scene , 5);
+    health = new Health(scene , 5);
     scene->addItem(health);
 
 

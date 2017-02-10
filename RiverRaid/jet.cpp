@@ -37,7 +37,7 @@ void Jet::move()
             cout << "Enemy collided with player!" ;
             this->explode();
             Player* player = (Player*) colliding_Items[i] ;
-            player->getHealth()->decreaseHealth();
+//            player->getHealth()->decreaseHealth();
             this->scene()->removeItem(this);
             delete this ;
             return ;

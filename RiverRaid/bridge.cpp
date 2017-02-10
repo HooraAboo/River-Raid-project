@@ -22,7 +22,7 @@ Bridge::Bridge(GameEngine* engine)
 void Bridge::explode()
 {
     Player* player = (Player*) scene()->focusItem() ;
-    player->increaseScore(5);
+//    player->increaseScore(5);
     int x = this->x() ;
     int y = this->y() ;
     cout << "item removed!" << endl ;
@@ -38,7 +38,7 @@ void Bridge::move()
             cout << "Bridge collided with player!" ;
 //            this->explode();
             Player* player = (Player*) colliding_Items[i] ;
-            player->getHealth()->decreaseHealth();
+//            player->getHealth()->decreaseHealth();
             this->explode();
             this->scene()->removeItem(this);
             delete this ;

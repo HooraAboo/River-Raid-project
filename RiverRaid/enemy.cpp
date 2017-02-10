@@ -6,6 +6,8 @@ QPixmap* Enemy::rightJetImage = NULL ;
 QPixmap* Enemy::leftJetImage = NULL;
 QPixmap* Enemy::baloonImage = NULL ;
 
+extern GameEngine* game;
+
 void Enemy::damage()
 {
     health-- ;
@@ -21,7 +23,7 @@ void Enemy::damage()
 void Enemy::explode()
 {
     Player* player = (Player*) scene()->focusItem() ;
-    player->increaseScore(score);
+//    player->increaseScore(score);
     int x = this->x() ;
     int y = this->y() ;
     cout << "item removed!" << endl ;
@@ -37,7 +39,7 @@ void Enemy::move()
             cout << "Enemy collided with player!" ;
             this->explode();
             Player* player = (Player*) colliding_Items[i] ;
-            player->getHealth()->decreaseHealth();
+            game->health->decreaseHealth();
             this->scene()->removeItem(this);
             delete this ;
             return ;
