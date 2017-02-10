@@ -9,6 +9,7 @@
 #include <QTimer>
 #include <cstdlib>
 #include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 #include "player.h"
 #include "score.h"

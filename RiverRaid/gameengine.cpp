@@ -6,9 +6,6 @@ double GameEngine::normalHorizontalSpeed = 1;
 
 GameEngine::GameEngine()
 {
-
-
-
     // set the scene
     QGraphicsScene * scene = new QGraphicsScene();
     scene->setSceneRect(0,0,900,613);
@@ -49,8 +46,12 @@ GameEngine::GameEngine()
 
 
     // play BG music
+    QMediaPlaylist * playInLoop = new QMediaPlaylist();
+    playInLoop->addMedia(QUrl("qrc:/soundtrack/BackgroundSound.mp3"));
+    playInLoop->setPlaybackMode((QMediaPlaylist::Loop));
+
     QMediaPlayer * bgSound = new QMediaPlayer();
-    bgSound->setMedia(QUrl("qrc:/soundtrack/BackgroundSound.mp3"));
+    bgSound->setPlaylist(playInLoop);
     bgSound->play();
 
 
