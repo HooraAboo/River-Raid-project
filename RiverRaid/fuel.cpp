@@ -20,10 +20,8 @@ void Fuel::move(){
     QList<QGraphicsItem*> colliding_Items = collidingItems() ;
     for (int i = 0; i < colliding_Items.size(); ++i) {
         if( typeid(*(colliding_Items[i])) == typeid(Player)){
-            Player* player = (Player*) colliding_Items[i] ;
-            player->fuel += 5 ;
-            cout << "Fuel collided with player! fuel : "
-                 << player->fuel << endl;
+            game->fuel->increaseFuel(4);
+//            cout << "Fuel collided with player! fuel : " << endl;
         }
     }
 
