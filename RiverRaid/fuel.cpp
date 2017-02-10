@@ -4,7 +4,7 @@ Fuel::Fuel(QGraphicsView* view)
 {
     this->view = view ;
     cout << "fuel created!" << endl ;
-    setPixmap(QPixmap(":/images/Fuel.png").scaled(70 , 120));
+    setPixmap(QPixmap(":/images/Fuel.png").scaled(40 , 70));
     int sceneWidth = 350; //this must be fixed!
     int randomX = (rand()% sceneWidth + 240) ;
     setPos(randomX , 0) ;

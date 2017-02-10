@@ -10,12 +10,12 @@
 #include <typeinfo>
 
 
-
 class Bullet: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     Bullet();
     bool isEnemy(QGraphicsItem* item);
+    static int bulletCount;
 public slots:
     void move();
 };

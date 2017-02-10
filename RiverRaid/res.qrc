@@ -16,7 +16,7 @@
         <file>../Bridge.png</file>
     </qresource>
     <qresource prefix="/soundtrack">
-        <file>BG sound.mp3</file>
-        <file>Gun+Shot2.mp3</file>
+        <file>../BackgroundSound.mp3</file>
+        <file>../Bullet.aiff</file>
     </qresource>
 </RCC>

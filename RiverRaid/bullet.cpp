@@ -2,7 +2,11 @@
 #include "ship.h"
 #include "baloon.h"
 #include "jet.h"
+
+int Bullet::bulletCount = 0 ;
+
 Bullet::Bullet(){
+    bulletCount =0;
     this->setPixmap(QPixmap(":/images/Bullet.png").scaled(12 , 12));
     setTransformOriginPoint(50,50);
     setRotation(-90);
@@ -32,6 +36,7 @@ void Bullet::move(){
             Enemy* enemy = (Enemy*) colliding_items[i] ;
             enemy->damage();
             scene()->removeItem(this);
+            Bullet::bulletCount--;
             delete this;
             return;
         }
@@ -43,6 +48,7 @@ void Bullet::move(){
             scene()->removeItem(fuel);
             delete fuel ;
             scene()->removeItem(this);
+            bulletCount--;
             delete this ;
             return ;
         }
@@ -51,6 +57,7 @@ void Bullet::move(){
     this->setPos(x(), y()-15);
     if(this->pos().y() < 0){
          scene()->removeItem(this);
+         bulletCount--;
          delete this;
     }
 }
