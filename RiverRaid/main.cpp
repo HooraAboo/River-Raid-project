@@ -4,6 +4,8 @@
 #include "gameengine.h"
 using namespace Qt;
 
+GameEngine * game;
+
 int main(int argc, char *argv[]){
     QApplication a(argc, argv);
 
@@ -19,7 +21,7 @@ int main(int argc, char *argv[]){
 
     Bridge::bridgeImage = new QPixmap(":/images/Bridge.png") ;
 
-    GameEngine * game = new GameEngine() ;
+    game = new GameEngine() ;
     game->show();
 
     return a.exec();

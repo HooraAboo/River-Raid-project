@@ -9,6 +9,10 @@
 #include <QApplication>
 #include <typeinfo>
 
+#include <gameengine.h>
+
+extern GameEngine* game;
+
 
 class Bullet: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT

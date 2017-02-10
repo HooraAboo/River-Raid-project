@@ -28,8 +28,8 @@ GameEngine::GameEngine()
     scene->addItem(player);
 
 
-//    // set the score
-    Score * score = new Score(0 , scene);
+    // set the score
+    score = new Score(0 , scene);
 //    scene->addItem(score);
 
     // set the health

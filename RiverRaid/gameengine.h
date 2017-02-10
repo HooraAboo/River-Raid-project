@@ -31,10 +31,10 @@ class GameEngine : public QGraphicsView
 {
     QList<Enemy*> enemies ;
     Player* player ;
-    Score * score ;
     Health * health ;
 
 public:
+    Score * score ;
     static double sceneSpeed  ;
     static double normalHorizontalSpeed ;
     GameEngine();

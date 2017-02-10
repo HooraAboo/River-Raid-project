@@ -35,6 +35,10 @@ void Bullet::move(){
             Enemy* enemy = (Enemy*) colliding_items[i] ;
             enemy->damage();
             scene()->removeItem(this);
+
+            //increase score
+            game->score->increase(2);
+
             Bullet::bulletCount--;
             delete this;
             return;
